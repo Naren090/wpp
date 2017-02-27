@@ -6,6 +6,7 @@ import * as siteVersionActions from '../actions/siteVersionActions';
 import RaisedButton from 'material-ui/RaisedButton';
 import { Table, TableBody, TableHeader, TableHeaderColumn, TableRow } from 'material-ui/Table';
 import GridRow from '../containers/GridRow';
+import '../styles/sitVersion.css';
 
 export class HomePage extends Component {
   constructor(props) {
@@ -66,7 +67,7 @@ export class HomePage extends Component {
         <Table selectable={false} height="220px" style={{ border: '1px solid rgb(224, 224, 224)' }}>
           <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
             <TableRow>
-              <TableHeaderColumn style={{ textAlign: 'center' }} children="Version" />
+              <TableHeaderColumn style={{ textAlign: 'center' }} children="Version" className="header"/>
               <TableHeaderColumn style={{ textAlign: 'center' }} children="Mode" />
               <TableHeaderColumn style={{ width: 24, textAlign: 'center' }} children="Activate" />
               <TableHeaderColumn style={{ width: 24, textAlign: 'center' }} />
