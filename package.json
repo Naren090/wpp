@@ -1,7 +1,7 @@
 {
-  "name": "react-slingshot",
-  "version": "5.0.0",
-  "description": "Starter kit for creating apps with React and Redux",
+  "name": "wpp",
+  "version": "0.0.1",
+  "description": "VersionSite Component using React and Redux",
   "engines": {
     "npm": ">=3"
   },
@@ -28,7 +28,7 @@
     "open:cover": "npm run test:cover && open coverage/lcov-report/index.html",
     "analyze-bundle": "babel-node ./tools/analyzeBundle.js"
   },
-  "author": "Cory House",
+  "author": "Naren",
   "license": "MIT",
   "dependencies": {
     "material-ui": "^0.17.0",
@@ -105,13 +105,11 @@
     "edit",
     "webpack",
     "redux",
-    "flux",
-    "boilerplate",
-    "starter"
+    "VersionSite"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/coryhouse/react-slingshot"
+    "url": "https://github.com/Naren090/wpp"
   },
   "jest": {
     "moduleNameMapper": {
