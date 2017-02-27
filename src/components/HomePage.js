@@ -67,9 +67,9 @@ export class HomePage extends Component {
         <Table selectable={false} height="220px" style={{ border: '1px solid rgb(224, 224, 224)' }}>
           <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
             <TableRow>
-              <TableHeaderColumn style={{ textAlign: 'center' }} children="Version" className="header"/>
-              <TableHeaderColumn style={{ textAlign: 'center' }} children="Mode" />
-              <TableHeaderColumn style={{ width: 24, textAlign: 'center' }} children="Activate" />
+              <TableHeaderColumn style={{ textAlign: 'left' }} children="Version" className="header"/>
+              <TableHeaderColumn style={{ textAlign: 'left' }} children="Mode" className="header"/>
+              <TableHeaderColumn style={{ width: 35, textAlign: 'left' }} children="Activate" className="header"/>
               <TableHeaderColumn style={{ width: 24, textAlign: 'center' }} />
             </TableRow>
           </TableHeader>
