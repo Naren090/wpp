@@ -2,7 +2,7 @@
 // Open the terminal
 // set the path 
 // example: username $ cd/path/
-// After $ yarn install
+// Next $ yarn install
 // Next $ npm start
 
 // To run the test
