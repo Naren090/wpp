@@ -3,7 +3,15 @@ import delay from './delay';
 // This file mocks a web API by working with the hard-coded data below.
 // It uses setTimeout to simulate the delay of an AJAX call.
 // All calls return promises.
-const siteVersions = [];
+const siteVersions = [
+  //{
+  //id: 0,
+  //versionValue: '',
+  //modeValue: '',
+  //isActive: false,
+
+//}
+];
 
 //This would be performed on the server in a real app. Just stubbing in.
 class SiteVersionApi {

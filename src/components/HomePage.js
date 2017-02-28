@@ -89,12 +89,6 @@ HomePage.propTypes = {
   actions: PropTypes.object.isRequired,
 };
 
-HomePage.propType = {
-  modes: PropTypes.array.isRequired,
-  versions: PropTypes.array.isRequired,
-  siteVerions: PropTypes.array.isRequired,
-};
-
 const mapStateToProps = (state) => ({
   modes: state.modes,
   versions: state.versions,
