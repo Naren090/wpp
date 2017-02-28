@@ -32,3 +32,4 @@ const siteVersions = (state = [], action) => {
 };
 
 export default siteVersions;
+

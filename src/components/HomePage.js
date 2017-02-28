@@ -67,9 +67,9 @@ export class HomePage extends Component {
         <Table selectable={false} height="220px" style={{ border: '1px solid rgb(224, 224, 224)' }}>
           <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
             <TableRow>
-              <TableHeaderColumn style={{ textAlign: 'left' }} children="Version" className="header"/>
-              <TableHeaderColumn style={{ textAlign: 'left' }} children="Mode" className="header"/>
-              <TableHeaderColumn style={{ width: 35, textAlign: 'left' }} children="Activate" className="header"/>
+              <TableHeaderColumn style={{ textAlign: 'left' }} children="Version" className="header" />
+              <TableHeaderColumn style={{ textAlign: 'left' }} children="Mode" className="header" />
+              <TableHeaderColumn style={{ width: 35, textAlign: 'left' }} children="Activate" className="header" />
               <TableHeaderColumn style={{ width: 24, textAlign: 'center' }} />
             </TableRow>
           </TableHeader>
@@ -89,6 +89,12 @@ HomePage.propTypes = {
   actions: PropTypes.object.isRequired,
 };
 
+HomePage.propType = {
+  modes: PropTypes.array.isRequired,
+  versions: PropTypes.array.isRequired,
+  siteVerions: PropTypes.array.isRequired,
+};
+
 const mapStateToProps = (state) => ({
   modes: state.modes,
   versions: state.versions,
@@ -101,4 +107,7 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
+
+
+
 
