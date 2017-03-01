@@ -29,6 +29,7 @@ export function deleteSiteVersionSuccess(siteVersion) {
 
 export function loadModes() {
   return (dispatch) => {
+    // fetch('apipath') replace with MockModeApi.getAllModes()
     return MockModeApi.getAllModes().then(modes => {
       dispatch(loadModesSuccess(modes));
     }).catch(error => {
@@ -88,6 +89,8 @@ export function deleteSiteVersion(siteVersion) {
     });
   };
 }
+
+
 
 
 
