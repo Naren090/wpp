@@ -61,9 +61,10 @@ export class HomePage extends Component {
         updateSiteVersion={this.updateSiteVersion}
       />
     );
+    
     return (
       <div>
-        <RaisedButton primary={true} label="Add Site Version" onClick={() => this.addSiteVersion(this.state.defaultSiteVersion)} style={{ margin: '20px 0' }} />
+  <RaisedButton primary={true} label="Add Site Version" onClick={() => this.addSiteVersion(this.state.defaultSiteVersion)}  labelStyle={{ textTransform: 'none'}} style={{  margin: '20px 0' }}  />
         <Table selectable={false} height="220px" style={{ border: '1px solid rgb(224, 224, 224)' }}>
           <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
             <TableRow>
@@ -88,6 +89,8 @@ HomePage.propTypes = {
   siteVersion: PropTypes.array.isRequired,
   actions: PropTypes.object.isRequired,
 };
+    
+    
 
 const mapStateToProps = (state) => ({
   modes: state.modes,
