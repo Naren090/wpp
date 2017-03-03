@@ -7,6 +7,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import { Table, TableBody, TableHeader, TableHeaderColumn, TableRow } from 'material-ui/Table';
 import GridRow from '../containers/GridRow';
 import '../styles/sitVersion.css';
+import Uploader from './Uploader';
 
 export class HomePage extends Component {
   constructor(props) {
@@ -78,6 +79,7 @@ export class HomePage extends Component {
             {gridRows}
           </TableBody>
         </Table>
+         <Uploader />
       </div>
     );
   }
