@@ -18,12 +18,18 @@ function setup() {
 			modeValue: '',
 			isActive: false
 		}],
-		actions: {
+		files: [],
+		uploadActions: {
+			loadFiles: () => { return Promise.resolve(); },
+			uploadFiles:jest.fn()
+		},
+		siteVersionActions: {
 			loadModes: () => { return Promise.resolve(); },
 			loadVersions: () => { return Promise.resolve(); },
 			loadSiteVersions: () => { return Promise.resolve(); },
 			addSiteVersion: jest.fn()
-		}
+		},
+
 	};
 
 	const enzymeWrapper = shallow(<HomePage {...props} />);
@@ -38,7 +44,7 @@ describe('Home page', () => {
 	it('should render self and subcomponents', () => {
 		const { enzymeWrapper } = setup();
 
-		const raisedButtonProps = enzymeWrapper.find('RaisedButton').props();
+		const raisedButtonProps = enzymeWrapper.find('RaisedButton').first().props();
 		expect(raisedButtonProps.primary).toBe(true);
 		expect(raisedButtonProps.label).toEqual('Add Site Version');
 
@@ -62,9 +68,9 @@ describe('Home page', () => {
 
 	it('should call addSiteVersion', () => {
 		const { enzymeWrapper, props } = setup();
-		const input = enzymeWrapper.find('RaisedButton');
+		const input = enzymeWrapper.find('RaisedButton').first();
 		input.props().onClick();
-		expect(props.actions.addSiteVersion.mock.calls.length).toBe(1);
+		expect(props.siteVersionActions.addSiteVersion.mock.calls.length).toBe(1);
 	});
 
 	it('should load site versions', () => {
@@ -73,8 +79,6 @@ describe('Home page', () => {
 		expect(tableBody.children().length).toBe(2);
 	});
 });
-
-
 
 
 
