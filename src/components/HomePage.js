@@ -57,6 +57,7 @@ export class HomePage extends Component {
   }
 
   handleClose() {
+    this.setState({ open: false });
 
   }
 
@@ -94,6 +95,7 @@ export class HomePage extends Component {
         label="Upload and Create"
         primary={true}
         onTouchTap={this.onSubmit}
+
       />,
     ];
 
@@ -113,7 +115,7 @@ export class HomePage extends Component {
             {gridRows}
           </TableBody>
         </Table>
-        <RaisedButton label="Modal Dialog" onTouchTap={this.handleOpen} />
+  <RaisedButton primary={true} label="BulkUpload" onTouchTap={this.handleOpen} labelStyle={{ textTransform: 'none' }}/>
         <Dialog
           actions={actions}
           modal={true}
