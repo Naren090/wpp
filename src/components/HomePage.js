@@ -7,7 +7,7 @@ import * as uploadActions from '../actions/uploadActions';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
-import { Table, TableBody, TableHeader, TableHeaderColumn, TableRow } from 'material-ui/Table';
+import { Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn } from 'material-ui/Table';
 import GridRow from '../containers/GridRow';
 import Uploader from './Uploader';
 
@@ -57,7 +57,6 @@ export class HomePage extends Component {
   }
 
   handleClose() {
-    this.setState({ open: false });
 
   }
 
@@ -71,7 +70,23 @@ export class HomePage extends Component {
   }
 
   render() {
-    console.log(this.props.files);
+    const uploadedFiles = this.props.files.map((fls, i) =>
+      <TableRow key={i}>
+        <TableRowColumn>
+          <ul>
+            {
+              fls.files.map((file, i) => <li key={i}>{file.name}</li>)
+            }
+          </ul>
+        </TableRowColumn>
+        <TableRowColumn>
+          {fls.ZipCheck ? 'True' : 'False'}
+        </TableRowColumn>
+        <TableRowColumn style={{ width: 24 }}>
+          {fls.PDFCheck ? 'True' : 'False'}
+        </TableRowColumn>
+      </TableRow>
+    );
 
     const gridRows = this.props.siteVersion.map((sv, i) =>
       <GridRow
@@ -95,7 +110,6 @@ export class HomePage extends Component {
         label="Upload and Create"
         primary={true}
         onTouchTap={this.onSubmit}
-
       />,
     ];
 
@@ -115,7 +129,7 @@ export class HomePage extends Component {
             {gridRows}
           </TableBody>
         </Table>
-  <RaisedButton primary={true} label="BulkUpload" onTouchTap={this.handleOpen} labelStyle={{ textTransform: 'none' }}/>
+        <RaisedButton label="Modal Dialog" onTouchTap={this.handleOpen} />
         <Dialog
           actions={actions}
           modal={true}
@@ -123,6 +137,16 @@ export class HomePage extends Component {
         >
           <Uploader multiple={false} onDataChange={this.getUploaderData} />
         </Dialog>
+        <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
+          <TableRow>
+            <TableHeaderColumn style={{ textAlign: 'center' }} children="Files" />
+            <TableHeaderColumn style={{ textAlign: 'center' }} children="Extract zip content" />
+            <TableHeaderColumn style={{ width: 24, textAlign: 'center' }} children="Display PDF in viewer" />
+          </TableRow>
+        </TableHeader>
+        <TableBody displayRowCheckbox={false}>
+          {uploadedFiles}
+        </TableBody>
 
       </div>
     );

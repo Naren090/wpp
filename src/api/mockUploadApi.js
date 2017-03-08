@@ -21,6 +21,8 @@ class UploadApi {
 	}
 
 	static uploadFile(file) {
+		const fls = file.files.map(value => Object.assign({}, value));
+		file = Object.assign({}, file, { files: fls });
 		return new Promise((resolve) => {
 			setTimeout(() => {
 				file.id = this.incrementId();
