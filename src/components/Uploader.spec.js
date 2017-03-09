@@ -33,24 +33,25 @@ describe('Uploader', () => {
 	it('should render Extract zip content', () => {
 		const { enzymeWrapper } = setupShallow();
 		enzymeWrapper.setState({ isZipFileAvailable: true });
-		const zipChekbox = enzymeWrapper.find('Checkbox').props();
-		expect(zipChekbox.label).toBe('Extract zip content');
+		const zipCheckbox = enzymeWrapper.find('Checkbox').props();
+		expect(zipCheckbox.label).toBe('Extract zip content');
 	});
 
 	it('should render Display PDF in viewer', () => {
 		const { enzymeWrapper } = setupShallow();
 		enzymeWrapper.setState({ isPDFFileAvailable: true });
-		const pdfChekbox = enzymeWrapper.find('Checkbox').props();
-		expect(pdfChekbox.label).toBe('Display PDF in viewer');
+		const pdfCheckbox = enzymeWrapper.find('Checkbox').props();
+		expect(pdfCheckbox.label).toBe('Display PDF in viewer');
 	});
 
 	it('should render both checkbox', () => {
 		const { enzymeWrapper } = setupShallow();
 		enzymeWrapper.setState({ isZipFileAvailable: true, isPDFFileAvailable: true });
-		const zipChekbox = enzymeWrapper.find('Checkbox').at(0).props();
-		const pdfChekbox = enzymeWrapper.find('Checkbox').at(1).props();
-		expect(zipChekbox.label).toBe('Extract zip content');
-		expect(pdfChekbox.label).toBe('Display PDF in viewer');
+		const zipCheckbox = enzymeWrapper.find('Checkbox').at(0).props();
+		const pdfCheckbox = enzymeWrapper.find('Checkbox').at(1).props();
+		expect(zipCheckbox.label).toBe('Extract zip content');
+		expect(pdfCheckbox.label).toBe('Display PDF in viewer');
+		expect(pdfCheckbox.label).toBe('Display PDF in viewer');
 	});
 });
 
