@@ -21,6 +21,7 @@ export function loadFiles() {
 
 export function uploadFiles(data) {
   return (dispatch) => {
+    // fetch('url', { type: 'POST' })
     return MockUploadApi.uploadFile(data).then(file => {
       dispatch(uploadFilesSuccess(file));
     }).catch(error => {

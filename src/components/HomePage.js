@@ -9,7 +9,7 @@ import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import { Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn } from 'material-ui/Table';
 import GridRow from '../containers/GridRow';
-import Uploader from './Uploader';
+import { Uploader } from './Uploader';
 
 
 export class HomePage extends Component {
@@ -57,7 +57,7 @@ export class HomePage extends Component {
   }
 
   handleClose() {
-
+    this.setState({ open: false });
   }
 
   getUploaderData(UploaderData) {
@@ -129,7 +129,7 @@ export class HomePage extends Component {
             {gridRows}
           </TableBody>
         </Table>
-        <RaisedButton label="Modal Dialog" onTouchTap={this.handleOpen} />
+        <RaisedButton primary={true} label="Bulk Upload" onTouchTap={this.handleOpen} labelStyle={{ textTransform: 'none' }} />
         <Dialog
           actions={actions}
           modal={true}

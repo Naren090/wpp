@@ -16,7 +16,7 @@ const style = {
 	margin: '8px 0'
 };
 
-class Uploader extends Component {
+export class Uploader extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -36,11 +36,11 @@ class Uploader extends Component {
 		this.onPDFCheck = this.onPDFCheck.bind(this);
 	}
 	onDrop(acceptedFiles) {
-    console.log(acceptedFiles);
-		const data = { ...this.state.data,files: acceptedFiles };
+		const files = [...this.state.data.files, ...acceptedFiles];
+		const data = { ...this.state.data, files };
 		this.setState({
-			isZipFileAvailable: acceptedFiles.find(x => x.type === "application/x-zip-compressed" || x.type === "application/zip") !== undefined,
-			isPDFFileAvailable: acceptedFiles.find(x => x.type === "application/pdf") !== undefined,
+			isZipFileAvailable: data.files.find(x => x.type === "application/x-zip-compressed" || x.type === "application/zip") !== undefined,
+			isPDFFileAvailable: data.files.find(x => x.type === "application/pdf") !== undefined,
 			data
 		});
 		this.props.onDataChange(data);
@@ -68,7 +68,7 @@ class Uploader extends Component {
 				<Dropzone ref={(node) => { this.dropzone = node; }} onDrop={this.onDrop} multiple={this.state.multiple} style={style}>
 					<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: 8 }} >
 						<p>Drag and drop assets here</p>
-						<RaisedButton primary={true} label="Browse File" />
+						<RaisedButton primary={true} label="Browse File" labelStyle={{ textTransform: 'none' }} />
 					</div>
 				</Dropzone>
 				{
@@ -83,7 +83,7 @@ class Uploader extends Component {
 }
 
 Uploader.propTypes = {
-  onDataChange: PropTypes.func.isRequired,
+	onDataChange: PropTypes.func.isRequired,
 	multiple: PropTypes.bool,
 };
 

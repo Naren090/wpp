@@ -21,7 +21,7 @@ class UploadApi {
 	}
 
 	static uploadFile(file) {
-		const fls = file.files.map(value => Object.assign({}, value));
+		const fls = file.files.map(value => Object.assign({}, { lastModified: value.lastModified, lastModifiedDate: value.lastModifiedDate, name: value.name, type: value.type, webkitRelativePath: value.webkitRelativePath }));
 		file = Object.assign({}, file, { files: fls });
 		return new Promise((resolve) => {
 			setTimeout(() => {
