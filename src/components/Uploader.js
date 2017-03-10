@@ -87,7 +87,7 @@ export class Uploader extends Component {
 				{
 					this.state.isPDFFileAvailable ? <Checkbox label="Display PDF in viewer" checked={this.state.data.PDFCheck} onCheck={this.onPDFCheck} /> : null
 				}
-				<div style={ this.state.data.files.length > 0 ? { height: 150, overflowX: 'auto' } : {}}>
+				<div style={this.state.data.files.length > 0 ? { height: 150, overflowX: 'auto' } : {}}>
 					{this.state.data.files.length > 0 ? <List style={{ margin: 8 }}>{this.state.data.files.map((file, i) => { return <div key={i}><ListItem primaryText={file.name} rightIcon={<ActionDelete onClick={() => this.deleteFile(file)} />} /><Divider /></div>; })}</List> : null}
 				</div>
 			</div>
