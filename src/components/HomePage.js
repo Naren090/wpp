@@ -11,7 +11,6 @@ import { Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowCol
 import GridRow from '../containers/GridRow';
 import { Uploader } from './Uploader';
 
-
 export class HomePage extends Component {
   constructor(props) {
     super(props);
@@ -58,6 +57,7 @@ export class HomePage extends Component {
 
   handleClose() {
     this.setState({ open: false });
+
   }
 
   getUploaderData(UploaderData) {
@@ -129,13 +129,13 @@ export class HomePage extends Component {
             {gridRows}
           </TableBody>
         </Table>
-        <RaisedButton primary={true} label="Bulk Upload" onTouchTap={this.handleOpen} labelStyle={{ textTransform: 'none' }} />
+        <RaisedButton label="Bulk Upload" onTouchTap={this.handleOpen} />
         <Dialog
           actions={actions}
           modal={true}
           open={this.state.open}
         >
-          <Uploader multiple={false} onDataChange={this.getUploaderData} />
+          <Uploader multiple={true} onDataChange={this.getUploaderData} />
         </Dialog>
         <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
           <TableRow>
