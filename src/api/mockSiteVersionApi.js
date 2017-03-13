@@ -3,23 +3,36 @@ import delay from './delay';
 // This file mocks a web API by working with the hard-coded data below.
 // It uses setTimeout to simulate the delay of an AJAX call.
 // All calls return promises.
-const siteVersions = [
-  //{
-  //id: 0,
-  //versionValue: '',
-  //modeValue: '',
-  //isActive: false,
-
-//}
-];
+const siteVersions = [];
 
 //This would be performed on the server in a real app. Just stubbing in.
+/**
+ * 
+ * 
+ * @class SiteVersionApi
+ */
 class SiteVersionApi {
+  /**
+   * 
+   * 
+   * @static
+   * @returns 
+   * 
+   * @memberOf SiteVersionApi
+   */
   static incrementId() {
     if (!this.latestId) this.latestId = 1;
     else this.latestId++;
     return this.latestId;
   }
+  /**
+   * 
+   * 
+   * @static
+   * @returns all siteVersion
+   * 
+   * @memberOf SiteVersionApi
+   */
   static getAllSiteVersions() {
     return new Promise((resolve) => {
       setTimeout(() => {
@@ -28,6 +41,15 @@ class SiteVersionApi {
     });
   }
 
+  /**
+   * 
+   * 
+   * @static
+   * @param {object} siteVersion 
+   * @returns prmise with added or updated siteVersion
+   * 
+   * @memberOf SiteVersionApi
+   */
   static saveSiteVersion(siteVersion) {
     siteVersion = Object.assign({}, siteVersion); // to avoid manipulating object passed in.
     return new Promise((resolve) => {
@@ -48,6 +70,15 @@ class SiteVersionApi {
     });
   }
 
+  /**
+   * 
+   * 
+   * @static
+   * @param {number} siteVersionId 
+   * @returns promise with null object
+   * 
+   * @memberOf SiteVersionApi
+   */
   static deleteSiteVersion(siteVersionId) {
     return new Promise((resolve) => {
       setTimeout(() => {

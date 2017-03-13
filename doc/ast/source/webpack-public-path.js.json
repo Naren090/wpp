@@ -1,0 +1,1228 @@
+{
+  "type": "File",
+  "start": 0,
+  "end": 598,
+  "loc": {
+    "start": {
+      "line": 1,
+      "column": 0
+    },
+    "end": {
+      "line": 10,
+      "column": 0
+    }
+  },
+  "program": {
+    "type": "Program",
+    "start": 0,
+    "end": 598,
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 10,
+        "column": 0
+      }
+    },
+    "sourceType": "module",
+    "body": [
+      {
+        "type": "ExpressionStatement",
+        "start": 510,
+        "end": 597,
+        "loc": {
+          "start": {
+            "line": 9,
+            "column": 0
+          },
+          "end": {
+            "line": 9,
+            "column": 87
+          }
+        },
+        "expression": {
+          "type": "AssignmentExpression",
+          "start": 510,
+          "end": 596,
+          "loc": {
+            "start": {
+              "line": 9,
+              "column": 0
+            },
+            "end": {
+              "line": 9,
+              "column": 86
+            }
+          },
+          "operator": "=",
+          "left": {
+            "type": "Identifier",
+            "start": 510,
+            "end": 533,
+            "loc": {
+              "start": {
+                "line": 9,
+                "column": 0
+              },
+              "end": {
+                "line": 9,
+                "column": 23
+              },
+              "identifierName": "__webpack_public_path__"
+            },
+            "name": "__webpack_public_path__",
+            "leadingComments": null
+          },
+          "right": {
+            "type": "BinaryExpression",
+            "start": 536,
+            "end": 596,
+            "loc": {
+              "start": {
+                "line": 9,
+                "column": 26
+              },
+              "end": {
+                "line": 9,
+                "column": 86
+              }
+            },
+            "left": {
+              "type": "BinaryExpression",
+              "start": 536,
+              "end": 590,
+              "loc": {
+                "start": {
+                  "line": 9,
+                  "column": 26
+                },
+                "end": {
+                  "line": 9,
+                  "column": 80
+                }
+              },
+              "left": {
+                "type": "BinaryExpression",
+                "start": 536,
+                "end": 567,
+                "loc": {
+                  "start": {
+                    "line": 9,
+                    "column": 26
+                  },
+                  "end": {
+                    "line": 9,
+                    "column": 57
+                  }
+                },
+                "left": {
+                  "type": "MemberExpression",
+                  "start": 536,
+                  "end": 560,
+                  "loc": {
+                    "start": {
+                      "line": 9,
+                      "column": 26
+                    },
+                    "end": {
+                      "line": 9,
+                      "column": 50
+                    }
+                  },
+                  "object": {
+                    "type": "MemberExpression",
+                    "start": 536,
+                    "end": 551,
+                    "loc": {
+                      "start": {
+                        "line": 9,
+                        "column": 26
+                      },
+                      "end": {
+                        "line": 9,
+                        "column": 41
+                      }
+                    },
+                    "object": {
+                      "type": "Identifier",
+                      "start": 536,
+                      "end": 542,
+                      "loc": {
+                        "start": {
+                          "line": 9,
+                          "column": 26
+                        },
+                        "end": {
+                          "line": 9,
+                          "column": 32
+                        },
+                        "identifierName": "window"
+                      },
+                      "name": "window"
+                    },
+                    "property": {
+                      "type": "Identifier",
+                      "start": 543,
+                      "end": 551,
+                      "loc": {
+                        "start": {
+                          "line": 9,
+                          "column": 33
+                        },
+                        "end": {
+                          "line": 9,
+                          "column": 41
+                        },
+                        "identifierName": "location"
+                      },
+                      "name": "location"
+                    },
+                    "computed": false
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "start": 552,
+                    "end": 560,
+                    "loc": {
+                      "start": {
+                        "line": 9,
+                        "column": 42
+                      },
+                      "end": {
+                        "line": 9,
+                        "column": 50
+                      },
+                      "identifierName": "protocol"
+                    },
+                    "name": "protocol"
+                  },
+                  "computed": false
+                },
+                "operator": "+",
+                "right": {
+                  "type": "StringLiteral",
+                  "start": 563,
+                  "end": 567,
+                  "loc": {
+                    "start": {
+                      "line": 9,
+                      "column": 53
+                    },
+                    "end": {
+                      "line": 9,
+                      "column": 57
+                    }
+                  },
+                  "extra": {
+                    "rawValue": "//",
+                    "raw": "\"//\""
+                  },
+                  "value": "//"
+                }
+              },
+              "operator": "+",
+              "right": {
+                "type": "MemberExpression",
+                "start": 570,
+                "end": 590,
+                "loc": {
+                  "start": {
+                    "line": 9,
+                    "column": 60
+                  },
+                  "end": {
+                    "line": 9,
+                    "column": 80
+                  }
+                },
+                "object": {
+                  "type": "MemberExpression",
+                  "start": 570,
+                  "end": 585,
+                  "loc": {
+                    "start": {
+                      "line": 9,
+                      "column": 60
+                    },
+                    "end": {
+                      "line": 9,
+                      "column": 75
+                    }
+                  },
+                  "object": {
+                    "type": "Identifier",
+                    "start": 570,
+                    "end": 576,
+                    "loc": {
+                      "start": {
+                        "line": 9,
+                        "column": 60
+                      },
+                      "end": {
+                        "line": 9,
+                        "column": 66
+                      },
+                      "identifierName": "window"
+                    },
+                    "name": "window"
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "start": 577,
+                    "end": 585,
+                    "loc": {
+                      "start": {
+                        "line": 9,
+                        "column": 67
+                      },
+                      "end": {
+                        "line": 9,
+                        "column": 75
+                      },
+                      "identifierName": "location"
+                    },
+                    "name": "location"
+                  },
+                  "computed": false
+                },
+                "property": {
+                  "type": "Identifier",
+                  "start": 586,
+                  "end": 590,
+                  "loc": {
+                    "start": {
+                      "line": 9,
+                      "column": 76
+                    },
+                    "end": {
+                      "line": 9,
+                      "column": 80
+                    },
+                    "identifierName": "host"
+                  },
+                  "name": "host"
+                },
+                "computed": false
+              }
+            },
+            "operator": "+",
+            "right": {
+              "type": "StringLiteral",
+              "start": 593,
+              "end": 596,
+              "loc": {
+                "start": {
+                  "line": 9,
+                  "column": 83
+                },
+                "end": {
+                  "line": 9,
+                  "column": 86
+                }
+              },
+              "extra": {
+                "rawValue": "/",
+                "raw": "\"/\""
+              },
+              "value": "/"
+            }
+          },
+          "leadingComments": null
+        },
+        "leadingComments": [
+          {
+            "type": "CommentLine",
+            "value": " Dynamically set the webpack public path at runtime below",
+            "start": 0,
+            "end": 59,
+            "loc": {
+              "start": {
+                "line": 1,
+                "column": 0
+              },
+              "end": {
+                "line": 1,
+                "column": 59
+              }
+            }
+          },
+          {
+            "type": "CommentLine",
+            "value": " This magic global is used by webpack to set the public path at runtime.",
+            "start": 60,
+            "end": 134,
+            "loc": {
+              "start": {
+                "line": 2,
+                "column": 0
+              },
+              "end": {
+                "line": 2,
+                "column": 74
+              }
+            }
+          },
+          {
+            "type": "CommentLine",
+            "value": " The public path is set dynamically to avoid the following issues:",
+            "start": 135,
+            "end": 203,
+            "loc": {
+              "start": {
+                "line": 3,
+                "column": 0
+              },
+              "end": {
+                "line": 3,
+                "column": 68
+              }
+            }
+          },
+          {
+            "type": "CommentLine",
+            "value": " 1. https://github.com/coryhouse/react-slingshot/issues/205",
+            "start": 204,
+            "end": 265,
+            "loc": {
+              "start": {
+                "line": 4,
+                "column": 0
+              },
+              "end": {
+                "line": 4,
+                "column": 61
+              }
+            }
+          },
+          {
+            "type": "CommentLine",
+            "value": " 2. https://github.com/coryhouse/react-slingshot/issues/181",
+            "start": 266,
+            "end": 327,
+            "loc": {
+              "start": {
+                "line": 5,
+                "column": 0
+              },
+              "end": {
+                "line": 5,
+                "column": 61
+              }
+            }
+          },
+          {
+            "type": "CommentLine",
+            "value": " 3. https://github.com/coryhouse/react-slingshot/pull/125",
+            "start": 328,
+            "end": 387,
+            "loc": {
+              "start": {
+                "line": 6,
+                "column": 0
+              },
+              "end": {
+                "line": 6,
+                "column": 59
+              }
+            }
+          },
+          {
+            "type": "CommentLine",
+            "value": " Documentation: http://webpack.github.io/docs/configuration.html#output-publicpath",
+            "start": 388,
+            "end": 472,
+            "loc": {
+              "start": {
+                "line": 7,
+                "column": 0
+              },
+              "end": {
+                "line": 7,
+                "column": 84
+              }
+            }
+          },
+          {
+            "type": "CommentLine",
+            "value": " eslint-disable-next-line no-undef",
+            "start": 473,
+            "end": 509,
+            "loc": {
+              "start": {
+                "line": 8,
+                "column": 0
+              },
+              "end": {
+                "line": 8,
+                "column": 36
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "directives": []
+  },
+  "comments": [
+    {
+      "type": "CommentLine",
+      "value": " Dynamically set the webpack public path at runtime below",
+      "start": 0,
+      "end": 59,
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 59
+        }
+      }
+    },
+    {
+      "type": "CommentLine",
+      "value": " This magic global is used by webpack to set the public path at runtime.",
+      "start": 60,
+      "end": 134,
+      "loc": {
+        "start": {
+          "line": 2,
+          "column": 0
+        },
+        "end": {
+          "line": 2,
+          "column": 74
+        }
+      }
+    },
+    {
+      "type": "CommentLine",
+      "value": " The public path is set dynamically to avoid the following issues:",
+      "start": 135,
+      "end": 203,
+      "loc": {
+        "start": {
+          "line": 3,
+          "column": 0
+        },
+        "end": {
+          "line": 3,
+          "column": 68
+        }
+      }
+    },
+    {
+      "type": "CommentLine",
+      "value": " 1. https://github.com/coryhouse/react-slingshot/issues/205",
+      "start": 204,
+      "end": 265,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 0
+        },
+        "end": {
+          "line": 4,
+          "column": 61
+        }
+      }
+    },
+    {
+      "type": "CommentLine",
+      "value": " 2. https://github.com/coryhouse/react-slingshot/issues/181",
+      "start": 266,
+      "end": 327,
+      "loc": {
+        "start": {
+          "line": 5,
+          "column": 0
+        },
+        "end": {
+          "line": 5,
+          "column": 61
+        }
+      }
+    },
+    {
+      "type": "CommentLine",
+      "value": " 3. https://github.com/coryhouse/react-slingshot/pull/125",
+      "start": 328,
+      "end": 387,
+      "loc": {
+        "start": {
+          "line": 6,
+          "column": 0
+        },
+        "end": {
+          "line": 6,
+          "column": 59
+        }
+      }
+    },
+    {
+      "type": "CommentLine",
+      "value": " Documentation: http://webpack.github.io/docs/configuration.html#output-publicpath",
+      "start": 388,
+      "end": 472,
+      "loc": {
+        "start": {
+          "line": 7,
+          "column": 0
+        },
+        "end": {
+          "line": 7,
+          "column": 84
+        }
+      }
+    },
+    {
+      "type": "CommentLine",
+      "value": " eslint-disable-next-line no-undef",
+      "start": 473,
+      "end": 509,
+      "loc": {
+        "start": {
+          "line": 8,
+          "column": 0
+        },
+        "end": {
+          "line": 8,
+          "column": 36
+        }
+      }
+    }
+  ],
+  "tokens": [
+    {
+      "type": "CommentLine",
+      "value": " Dynamically set the webpack public path at runtime below",
+      "start": 0,
+      "end": 59,
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 59
+        }
+      }
+    },
+    {
+      "type": "CommentLine",
+      "value": " This magic global is used by webpack to set the public path at runtime.",
+      "start": 60,
+      "end": 134,
+      "loc": {
+        "start": {
+          "line": 2,
+          "column": 0
+        },
+        "end": {
+          "line": 2,
+          "column": 74
+        }
+      }
+    },
+    {
+      "type": "CommentLine",
+      "value": " The public path is set dynamically to avoid the following issues:",
+      "start": 135,
+      "end": 203,
+      "loc": {
+        "start": {
+          "line": 3,
+          "column": 0
+        },
+        "end": {
+          "line": 3,
+          "column": 68
+        }
+      }
+    },
+    {
+      "type": "CommentLine",
+      "value": " 1. https://github.com/coryhouse/react-slingshot/issues/205",
+      "start": 204,
+      "end": 265,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 0
+        },
+        "end": {
+          "line": 4,
+          "column": 61
+        }
+      }
+    },
+    {
+      "type": "CommentLine",
+      "value": " 2. https://github.com/coryhouse/react-slingshot/issues/181",
+      "start": 266,
+      "end": 327,
+      "loc": {
+        "start": {
+          "line": 5,
+          "column": 0
+        },
+        "end": {
+          "line": 5,
+          "column": 61
+        }
+      }
+    },
+    {
+      "type": "CommentLine",
+      "value": " 3. https://github.com/coryhouse/react-slingshot/pull/125",
+      "start": 328,
+      "end": 387,
+      "loc": {
+        "start": {
+          "line": 6,
+          "column": 0
+        },
+        "end": {
+          "line": 6,
+          "column": 59
+        }
+      }
+    },
+    {
+      "type": "CommentLine",
+      "value": " Documentation: http://webpack.github.io/docs/configuration.html#output-publicpath",
+      "start": 388,
+      "end": 472,
+      "loc": {
+        "start": {
+          "line": 7,
+          "column": 0
+        },
+        "end": {
+          "line": 7,
+          "column": 84
+        }
+      }
+    },
+    {
+      "type": "CommentLine",
+      "value": " eslint-disable-next-line no-undef",
+      "start": 473,
+      "end": 509,
+      "loc": {
+        "start": {
+          "line": 8,
+          "column": 0
+        },
+        "end": {
+          "line": 8,
+          "column": 36
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "__webpack_public_path__",
+      "start": 510,
+      "end": 533,
+      "loc": {
+        "start": {
+          "line": 9,
+          "column": 0
+        },
+        "end": {
+          "line": 9,
+          "column": 23
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "=",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": true,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "=",
+      "start": 534,
+      "end": 535,
+      "loc": {
+        "start": {
+          "line": 9,
+          "column": 24
+        },
+        "end": {
+          "line": 9,
+          "column": 25
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "window",
+      "start": 536,
+      "end": 542,
+      "loc": {
+        "start": {
+          "line": 9,
+          "column": 26
+        },
+        "end": {
+          "line": 9,
+          "column": 32
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ".",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 542,
+      "end": 543,
+      "loc": {
+        "start": {
+          "line": 9,
+          "column": 32
+        },
+        "end": {
+          "line": 9,
+          "column": 33
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "location",
+      "start": 543,
+      "end": 551,
+      "loc": {
+        "start": {
+          "line": 9,
+          "column": 33
+        },
+        "end": {
+          "line": 9,
+          "column": 41
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ".",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 551,
+      "end": 552,
+      "loc": {
+        "start": {
+          "line": 9,
+          "column": 41
+        },
+        "end": {
+          "line": 9,
+          "column": 42
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "protocol",
+      "start": 552,
+      "end": 560,
+      "loc": {
+        "start": {
+          "line": 9,
+          "column": 42
+        },
+        "end": {
+          "line": 9,
+          "column": 50
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "+/-",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": true,
+        "postfix": false,
+        "binop": 9,
+        "updateContext": null
+      },
+      "value": "+",
+      "start": 561,
+      "end": 562,
+      "loc": {
+        "start": {
+          "line": 9,
+          "column": 51
+        },
+        "end": {
+          "line": 9,
+          "column": 52
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "string",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "//",
+      "start": 563,
+      "end": 567,
+      "loc": {
+        "start": {
+          "line": 9,
+          "column": 53
+        },
+        "end": {
+          "line": 9,
+          "column": 57
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "+/-",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": true,
+        "postfix": false,
+        "binop": 9,
+        "updateContext": null
+      },
+      "value": "+",
+      "start": 568,
+      "end": 569,
+      "loc": {
+        "start": {
+          "line": 9,
+          "column": 58
+        },
+        "end": {
+          "line": 9,
+          "column": 59
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "window",
+      "start": 570,
+      "end": 576,
+      "loc": {
+        "start": {
+          "line": 9,
+          "column": 60
+        },
+        "end": {
+          "line": 9,
+          "column": 66
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ".",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 576,
+      "end": 577,
+      "loc": {
+        "start": {
+          "line": 9,
+          "column": 66
+        },
+        "end": {
+          "line": 9,
+          "column": 67
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "location",
+      "start": 577,
+      "end": 585,
+      "loc": {
+        "start": {
+          "line": 9,
+          "column": 67
+        },
+        "end": {
+          "line": 9,
+          "column": 75
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ".",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 585,
+      "end": 586,
+      "loc": {
+        "start": {
+          "line": 9,
+          "column": 75
+        },
+        "end": {
+          "line": 9,
+          "column": 76
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "host",
+      "start": 586,
+      "end": 590,
+      "loc": {
+        "start": {
+          "line": 9,
+          "column": 76
+        },
+        "end": {
+          "line": 9,
+          "column": 80
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "+/-",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": true,
+        "postfix": false,
+        "binop": 9,
+        "updateContext": null
+      },
+      "value": "+",
+      "start": 591,
+      "end": 592,
+      "loc": {
+        "start": {
+          "line": 9,
+          "column": 81
+        },
+        "end": {
+          "line": 9,
+          "column": 82
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "string",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "/",
+      "start": 593,
+      "end": 596,
+      "loc": {
+        "start": {
+          "line": 9,
+          "column": 83
+        },
+        "end": {
+          "line": 9,
+          "column": 86
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ";",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 596,
+      "end": 597,
+      "loc": {
+        "start": {
+          "line": 9,
+          "column": 86
+        },
+        "end": {
+          "line": 9,
+          "column": 87
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "eof",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 598,
+      "end": 598,
+      "loc": {
+        "start": {
+          "line": 10,
+          "column": 0
+        },
+        "end": {
+          "line": 10,
+          "column": 0
+        }
+      }
+    }
+  ]
+}

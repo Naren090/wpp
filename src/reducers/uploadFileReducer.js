@@ -1,6 +1,13 @@
 import * as types from '../constants/actionTypes';
 // import initialState from './initialState';
 
+/**
+ * 
+ * 
+ * @param {Array} [state=[]] 
+ * @param {any} action 
+ * @returns files state
+ */
 const uploadFiles = (state = [], action) => {
   switch (action.type) {
     case types.LOAD_FILES_SUCCESS: {

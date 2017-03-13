@@ -1,7 +1,16 @@
 import * as types from '../constants/actionTypes';
-// import initialState from './initialState';
 
+/**
+ * 
+ * 
+ * @param {Array} [state=[]] 
+ * @param {object} action 
+ * @returns siteVersions state
+ */
 const siteVersions = (state = [], action) => {
+  /**
+   * switch b/w action types
+   */
   switch (action.type) {
     case types.LOAD_SITEVERSIONS: {
       return action.siteVersions;
@@ -32,4 +41,3 @@ const siteVersions = (state = [], action) => {
 };
 
 export default siteVersions;
-

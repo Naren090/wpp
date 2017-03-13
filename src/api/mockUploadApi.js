@@ -5,6 +5,11 @@ import delay from './delay';
 // All calls return promises.
 const files = [];
 
+/**
+ * 
+ * 
+ * @class UploadApi
+ */
 class UploadApi {
 	static incrementId() {
 		if (!this.latestId) this.latestId = 1;
@@ -12,6 +17,14 @@ class UploadApi {
 		return this.latestId;
 	}
 
+	/**
+	 * 
+	 * 
+	 * @static
+	 * @returns all the uploaded files
+	 * 
+	 * @memberOf UploadApi
+	 */
 	static getAllfiles() {
 		return new Promise((resolve) => {
 			setTimeout(() => {
@@ -20,6 +33,15 @@ class UploadApi {
 		});
 	}
 
+	/**
+	 * 
+	 * 
+	 * @static
+	 * @param {object} file 
+	 * @returns promise with uploaded files
+	 * 
+	 * @memberOf UploadApi
+	 */
 	static uploadFile(file) {
 		const fls = file.files.map(value => Object.assign({}, { lastModified: value.lastModified, lastModifiedDate: value.lastModifiedDate, name: value.name, type: value.type, webkitRelativePath: value.webkitRelativePath }));
 		file = Object.assign({}, file, { files: fls });

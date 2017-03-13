@@ -7,11 +7,24 @@ import * as uploadActions from '../actions/uploadActions';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
-import { Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn } from 'material-ui/Table';
+import { Table, TableBody, TableHeader, TableHeaderColumn, TableRow } from 'material-ui/Table';
 import GridRow from '../containers/GridRow';
-import { Uploader } from './Uploader';
+import Uploader from './Uploader';
 
+/**
+ * 
+ * 
+ * @export
+ * @class HomePage
+ * @extends {Component}
+ */
 export class HomePage extends Component {
+  /**
+   * Creates an instance of HomePage.
+   * @param {any} props 
+   * 
+   * @memberOf HomePage
+   */
   constructor(props) {
     super(props);
     this.state = {
@@ -32,6 +45,12 @@ export class HomePage extends Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
 
+  /**
+   * 
+   * 
+   * 
+   * @memberOf HomePage
+   */
   componentWillMount() {
     this.props.siteVersionActions.loadModes();
     this.props.siteVersionActions.loadVersions();
@@ -39,54 +58,106 @@ export class HomePage extends Component {
     this.props.uploadActions.loadFiles();
   }
 
+  /**
+   * 
+   * 
+   * @param {any} siteVersion 
+   * 
+   * @memberOf HomePage
+   */
   addSiteVersion(siteVersion) {
     this.props.siteVersionActions.addSiteVersion(siteVersion);
   }
 
+  /**
+   * 
+   * 
+   * @param {any} siteVersion 
+   * 
+   * @memberOf HomePage
+   */
   updateSiteVersion(siteVersion) {
     this.props.siteVersionActions.updateSiteVersion(siteVersion);
   }
 
+  /**
+   * 
+   * 
+   * @param {any} siteVersion 
+   * 
+   * @memberOf HomePage
+   */
   deleteSiteVersion(siteVersion) {
     this.props.siteVersionActions.deleteSiteVersion(siteVersion);
   }
 
+  /**
+   * 
+   * 
+   * 
+   * @memberOf HomePage
+   */
   handleOpen() {
     this.setState({ open: true });
   }
 
+  /**
+   * 
+   * 
+   * 
+   * @memberOf HomePage
+   */
   handleClose() {
     this.setState({ open: false });
-
   }
 
+  /**
+   * 
+   * 
+   * @param {any} UploaderData 
+   * 
+   * @memberOf HomePage
+   */
   getUploaderData(UploaderData) {
     this.setState({ UploaderData });
   }
 
+  /**
+   * 
+   * 
+   * 
+   * @memberOf HomePage
+   */
   onSubmit() {
     this.setState({ open: false });
     this.props.uploadActions.uploadFiles(this.state.UploaderData);
   }
 
+  /**
+   * 
+   * 
+   * @returns 
+   * 
+   * @memberOf HomePage
+   */
   render() {
-    const uploadedFiles = this.props.files.map((fls, i) =>
-      <TableRow key={i}>
-        <TableRowColumn>
-          <ul>
-            {
-              fls.files.map((file, i) => <li key={i}>{file.name}</li>)
-            }
-          </ul>
-        </TableRowColumn>
-        <TableRowColumn>
-          {fls.ZipCheck ? 'True' : 'False'}
-        </TableRowColumn>
-        <TableRowColumn style={{ width: 24 }}>
-          {fls.PDFCheck ? 'True' : 'False'}
-        </TableRowColumn>
-      </TableRow>
-    );
+    // const uploadedFiles = this.props.files.map((fls, i) =>
+    //   <TableRow key={i}>
+    //     <TableRowColumn>
+    //       <ul>
+    //         {
+    //           fls.files.map((file, i) => <li key={i}>{file.name}</li>)
+    //         }
+    //       </ul>
+    //     </TableRowColumn>
+    //     <TableRowColumn>
+    //       {fls.ZipCheck ? 'True' : 'False'}
+    //     </TableRowColumn>
+    //     <TableRowColumn style={{ width: 24 }}>
+    //       {fls.PDFCheck ? 'True' : 'False'}
+    //     </TableRowColumn>
+    //   </TableRow>
+    // );
 
     const gridRows = this.props.siteVersion.map((sv, i) =>
       <GridRow
@@ -129,7 +200,7 @@ export class HomePage extends Component {
             {gridRows}
           </TableBody>
         </Table>
-        <RaisedButton label="Bulk Upload" onTouchTap={this.handleOpen} />
+        <RaisedButton primary={true} label="Bulk Upload" onTouchTap={this.handleOpen} labelStyle={{ textTransform: 'none' }}/>
         <Dialog
           actions={actions}
           modal={true}
@@ -137,16 +208,6 @@ export class HomePage extends Component {
         >
           <Uploader multiple={true} onDataChange={this.getUploaderData} />
         </Dialog>
-        <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
-          <TableRow>
-            <TableHeaderColumn style={{ textAlign: 'center' }} children="Files" />
-            <TableHeaderColumn style={{ textAlign: 'center' }} children="Extract zip content" />
-            <TableHeaderColumn style={{ width: 24, textAlign: 'center' }} children="Display PDF in viewer" />
-          </TableRow>
-        </TableHeader>
-        <TableBody displayRowCheckbox={false}>
-          {uploadedFiles}
-        </TableBody>
 
       </div>
     );
@@ -162,14 +223,26 @@ HomePage.propTypes = {
   uploadActions: PropTypes.object.isRequired,
 };
 
-const mapStateToProps = (state) => {
+/**
+ * 
+ * 
+ * @param {any} state 
+ * @returns 
+ */
+function mapStateToProps(state) {
   return {
     modes: state.modes,
     versions: state.versions,
     siteVersion: state.siteVersion,
     files: state.uploadFile,
   };
-};
+}
+/**
+ * 
+ * 
+ * @param {any} dispatch 
+ * @returns 
+ */
 function mapDispatchToProps(dispatch) {
   return {
     siteVersionActions: bindActionCreators(siteVersionActions, dispatch),

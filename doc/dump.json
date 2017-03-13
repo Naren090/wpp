@@ -1,0 +1,3448 @@
+[
+  {
+    "__docId__": 0,
+    "kind": "file",
+    "name": "src/actions/siteVersionActions.js",
+    "content": "import * as types from '../constants/actionTypes';\nimport MockModeApi from './../api/mockModeApi';\nimport MockVersionApi from './../api/mockVersionApi';\nimport MockSiteVersionApi from './../api/mockSiteVersionApi';\n\n/**\n * \n * \n * @export\n * @param {Array} modes \n * @returns LOAD_MODES and all modes array\n */\nexport function loadModesSuccess(modes) {\n  return { type: types.LOAD_MODES, modes };\n}\n\n/**\n * \n * \n * @export\n * @param {Array} versions \n * @returns LOAD_VERSIONS and all versions array\n */\nexport function loadVersionsSuccess(versions) {\n  return { type: types.LOAD_VERSIONS, versions };\n}\n\n/**\n * \n * \n * @export\n * @param {Array} siteVersions \n * @returns LOAD_SITEVERSIONS and all siteVersions array\n */\nexport function loadSiteVersionsSuccess(siteVersions) {\n  return { type: types.LOAD_SITEVERSIONS, siteVersions };\n}\n\n/**\n * \n * \n * @export\n * @param {object} siteVersion \n * @returns CREATE_SITEVERSIONS with created siteVersion object\n */\nexport function addSiteVersionSuccess(siteVersion) {\n  return { type: types.CREATE_SITEVERSIONS, siteVersion };\n}\n\n/**\n * \n * \n * @export\n * @param {object} siteVersion \n * @returns UPDATE_SITEVERSIONS with updated siteVersion object\n */\nexport function updateSiteVersionSuccess(siteVersion) {\n  return { type: types.UPDATE_SITEVERSIONS, siteVersion };\n}\n\n/**\n * \n * \n * @export\n * @param {object} siteVersion \n * @returns DELETE_SITEVERSIONS with deleted siteVersion object\n */\nexport function deleteSiteVersionSuccess(siteVersion) {\n  return { type: types.DELETE_SITEVERSIONS, siteVersion };\n}\n\n/**\n * \n * \n * @export\n * @returns if success then dispatch loadModesSuccess else throw error\n */\nexport function loadModes() {\n  return (dispatch) => {\n    return MockModeApi.getAllModes().then(modes => {\n      dispatch(loadModesSuccess(modes));\n    }).catch(error => {\n      throw (error);\n    });\n  };\n}\n\n/**\n * \n * \n * @export\n * @returns if success then dispatch loadVersionsSuccess else throw error\n */\nexport function loadVersions() {\n  return (dispatch) => {\n    return MockVersionApi.getAllVersions().then(versions => {\n      dispatch(loadVersionsSuccess(versions));\n    }).catch(error => {\n      throw (error);\n    });\n  };\n}\n\n/**\n * \n * \n * @export\n * @returns if success then dispatch loadSiteVersionsSuccess else throw error\n */\nexport function loadSiteVersions() {\n  return (dispatch) => {\n    return MockSiteVersionApi.getAllSiteVersions().then(sv => {\n      dispatch(loadSiteVersionsSuccess(sv));\n    }).catch(error => {\n      throw (error);\n    });\n  };\n}\n\n\n/**\n * \n * \n * @export\n * @param {object} siteVersion \n * @returns if success then dispatch addSiteVersion else throw error\n */\nexport function addSiteVersion(siteVersion) {\n  return (dispatch) => {\n    return MockSiteVersionApi.saveSiteVersion(siteVersion).then(sv => {\n      dispatch(addSiteVersionSuccess(sv));\n    }).catch(error => {\n      throw (error);\n    });\n  };\n}\n\n/**\n * \n * \n * @export\n * @param {object} siteVersion \n * @returns if success then dispatch updateSiteVersionSuccess else throw error\n */\nexport function updateSiteVersion(siteVersion) {\n  return (dispatch) => {\n    return MockSiteVersionApi.saveSiteVersion(siteVersion).then(sv => {\n      dispatch(updateSiteVersionSuccess(sv));\n    }).catch(error => {\n      throw (error);\n    });\n  };\n}\n\n/**\n * \n * \n * @export\n * @param {object} siteVersion \n * @returns if success then dispatch deleteSiteVersionSuccess else throw error\n */\nexport function deleteSiteVersion(siteVersion) {\n  return (dispatch) => {\n    return MockSiteVersionApi.deleteSiteVersion(siteVersion).then(() => {\n      dispatch(deleteSiteVersionSuccess(siteVersion));\n    }).catch(error => {\n      throw (error);\n    });\n  };\n}\n",
+    "static": true,
+    "longname": "src/actions/siteVersionActions.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 1,
+    "kind": "function",
+    "name": "loadModesSuccess",
+    "memberof": "src/actions/siteVersionActions.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/actions/siteVersionActions.js~loadModesSuccess",
+    "access": null,
+    "export": true,
+    "importPath": "wpp/src/actions/siteVersionActions.js",
+    "importStyle": "{loadModesSuccess}",
+    "description": "",
+    "lineNumber": 13,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "LOAD_MODES and all modes array"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "modes",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "*"
+      ],
+      "spread": false,
+      "description": "LOAD_MODES and all modes array"
+    }
+  },
+  {
+    "__docId__": 2,
+    "kind": "function",
+    "name": "loadVersionsSuccess",
+    "memberof": "src/actions/siteVersionActions.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/actions/siteVersionActions.js~loadVersionsSuccess",
+    "access": null,
+    "export": true,
+    "importPath": "wpp/src/actions/siteVersionActions.js",
+    "importStyle": "{loadVersionsSuccess}",
+    "description": "",
+    "lineNumber": 24,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "LOAD_VERSIONS and all versions array"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "versions",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "*"
+      ],
+      "spread": false,
+      "description": "LOAD_VERSIONS and all versions array"
+    }
+  },
+  {
+    "__docId__": 3,
+    "kind": "function",
+    "name": "loadSiteVersionsSuccess",
+    "memberof": "src/actions/siteVersionActions.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/actions/siteVersionActions.js~loadSiteVersionsSuccess",
+    "access": null,
+    "export": true,
+    "importPath": "wpp/src/actions/siteVersionActions.js",
+    "importStyle": "{loadSiteVersionsSuccess}",
+    "description": "",
+    "lineNumber": 35,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "LOAD_SITEVERSIONS and all siteVersions array"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "siteVersions",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "*"
+      ],
+      "spread": false,
+      "description": "LOAD_SITEVERSIONS and all siteVersions array"
+    }
+  },
+  {
+    "__docId__": 4,
+    "kind": "function",
+    "name": "addSiteVersionSuccess",
+    "memberof": "src/actions/siteVersionActions.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/actions/siteVersionActions.js~addSiteVersionSuccess",
+    "access": null,
+    "export": true,
+    "importPath": "wpp/src/actions/siteVersionActions.js",
+    "importStyle": "{addSiteVersionSuccess}",
+    "description": "",
+    "lineNumber": 46,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "CREATE_SITEVERSIONS with created siteVersion object"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "siteVersion",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "*"
+      ],
+      "spread": false,
+      "description": "CREATE_SITEVERSIONS with created siteVersion object"
+    }
+  },
+  {
+    "__docId__": 5,
+    "kind": "function",
+    "name": "updateSiteVersionSuccess",
+    "memberof": "src/actions/siteVersionActions.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/actions/siteVersionActions.js~updateSiteVersionSuccess",
+    "access": null,
+    "export": true,
+    "importPath": "wpp/src/actions/siteVersionActions.js",
+    "importStyle": "{updateSiteVersionSuccess}",
+    "description": "",
+    "lineNumber": 57,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "UPDATE_SITEVERSIONS with updated siteVersion object"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "siteVersion",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "*"
+      ],
+      "spread": false,
+      "description": "UPDATE_SITEVERSIONS with updated siteVersion object"
+    }
+  },
+  {
+    "__docId__": 6,
+    "kind": "function",
+    "name": "deleteSiteVersionSuccess",
+    "memberof": "src/actions/siteVersionActions.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/actions/siteVersionActions.js~deleteSiteVersionSuccess",
+    "access": null,
+    "export": true,
+    "importPath": "wpp/src/actions/siteVersionActions.js",
+    "importStyle": "{deleteSiteVersionSuccess}",
+    "description": "",
+    "lineNumber": 68,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "DELETE_SITEVERSIONS with deleted siteVersion object"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "siteVersion",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "*"
+      ],
+      "spread": false,
+      "description": "DELETE_SITEVERSIONS with deleted siteVersion object"
+    }
+  },
+  {
+    "__docId__": 7,
+    "kind": "function",
+    "name": "loadModes",
+    "memberof": "src/actions/siteVersionActions.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/actions/siteVersionActions.js~loadModes",
+    "access": null,
+    "export": true,
+    "importPath": "wpp/src/actions/siteVersionActions.js",
+    "importStyle": "{loadModes}",
+    "description": "",
+    "lineNumber": 78,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "if success then dispatch loadModesSuccess else throw error"
+      }
+    ],
+    "params": [],
+    "return": {
+      "nullable": null,
+      "types": [
+        "*"
+      ],
+      "spread": false,
+      "description": "if success then dispatch loadModesSuccess else throw error"
+    }
+  },
+  {
+    "__docId__": 8,
+    "kind": "function",
+    "name": "loadVersions",
+    "memberof": "src/actions/siteVersionActions.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/actions/siteVersionActions.js~loadVersions",
+    "access": null,
+    "export": true,
+    "importPath": "wpp/src/actions/siteVersionActions.js",
+    "importStyle": "{loadVersions}",
+    "description": "",
+    "lineNumber": 94,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "if success then dispatch loadVersionsSuccess else throw error"
+      }
+    ],
+    "params": [],
+    "return": {
+      "nullable": null,
+      "types": [
+        "*"
+      ],
+      "spread": false,
+      "description": "if success then dispatch loadVersionsSuccess else throw error"
+    }
+  },
+  {
+    "__docId__": 9,
+    "kind": "function",
+    "name": "loadSiteVersions",
+    "memberof": "src/actions/siteVersionActions.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/actions/siteVersionActions.js~loadSiteVersions",
+    "access": null,
+    "export": true,
+    "importPath": "wpp/src/actions/siteVersionActions.js",
+    "importStyle": "{loadSiteVersions}",
+    "description": "",
+    "lineNumber": 110,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "if success then dispatch loadSiteVersionsSuccess else throw error"
+      }
+    ],
+    "params": [],
+    "return": {
+      "nullable": null,
+      "types": [
+        "*"
+      ],
+      "spread": false,
+      "description": "if success then dispatch loadSiteVersionsSuccess else throw error"
+    }
+  },
+  {
+    "__docId__": 10,
+    "kind": "function",
+    "name": "addSiteVersion",
+    "memberof": "src/actions/siteVersionActions.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/actions/siteVersionActions.js~addSiteVersion",
+    "access": null,
+    "export": true,
+    "importPath": "wpp/src/actions/siteVersionActions.js",
+    "importStyle": "{addSiteVersion}",
+    "description": "",
+    "lineNumber": 128,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "if success then dispatch addSiteVersion else throw error"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "siteVersion",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "*"
+      ],
+      "spread": false,
+      "description": "if success then dispatch addSiteVersion else throw error"
+    }
+  },
+  {
+    "__docId__": 11,
+    "kind": "function",
+    "name": "updateSiteVersion",
+    "memberof": "src/actions/siteVersionActions.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/actions/siteVersionActions.js~updateSiteVersion",
+    "access": null,
+    "export": true,
+    "importPath": "wpp/src/actions/siteVersionActions.js",
+    "importStyle": "{updateSiteVersion}",
+    "description": "",
+    "lineNumber": 145,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "if success then dispatch updateSiteVersionSuccess else throw error"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "siteVersion",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "*"
+      ],
+      "spread": false,
+      "description": "if success then dispatch updateSiteVersionSuccess else throw error"
+    }
+  },
+  {
+    "__docId__": 12,
+    "kind": "function",
+    "name": "deleteSiteVersion",
+    "memberof": "src/actions/siteVersionActions.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/actions/siteVersionActions.js~deleteSiteVersion",
+    "access": null,
+    "export": true,
+    "importPath": "wpp/src/actions/siteVersionActions.js",
+    "importStyle": "{deleteSiteVersion}",
+    "description": "",
+    "lineNumber": 162,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "if success then dispatch deleteSiteVersionSuccess else throw error"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "siteVersion",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "*"
+      ],
+      "spread": false,
+      "description": "if success then dispatch deleteSiteVersionSuccess else throw error"
+    }
+  },
+  {
+    "__docId__": 13,
+    "kind": "file",
+    "name": "src/actions/siteVersionActions.spec.js",
+    "content": "import * as types from '../constants/actionTypes';\nimport * as siteVersionActions from './siteVersionActions';\n\nimport configureMockStore from 'redux-mock-store';\nimport thunk from 'redux-thunk';\nimport nock from 'nock';\nimport expect from 'expect'; // You can use any testing library\n\nconst middlewares = [thunk];\nconst mockStore = configureMockStore(middlewares);\n\ndescribe('Async Function', () => {\n\tafterEach(() => {\n\t\tnock.cleanAll();\n\t});\n\n\n\tit('load modes when loading modes', () => {\n\t\tconst expectedActions = [\n\t\t\t{ modes: [{ text: 'Cory', value: 'cory-house' }, { text: 'Scott', value: 'scott-allen' }, { text: 'Dan', value: 'dan-wahlin' }], type: types.LOAD_MODES }\n\t\t];\n\n\t\tconst store = mockStore({ modes: [] });\n\n\t\treturn store.dispatch(siteVersionActions.loadModes())\n\t\t\t.then(() => { // return of async actions\n\t\t\t\texpect(store.getActions()).toEqual(expectedActions);\n\t\t\t});\n\n\t});\n\n\tit('load version when loading versions', () => {\n\t\tconst expectedActions = [\n\t\t\t{ versions: [{ text: 'Cory', value: 'cory-house' }, { text: 'Scott', value: 'scott-allen' }, { text: 'Dan', value: 'dan-wahlin' }], type: types.LOAD_VERSIONS }\n\t\t];\n\n\t\tconst store = mockStore({ versions: [] });\n\n\t\treturn store.dispatch(siteVersionActions.loadVersions())\n\t\t\t.then(() => { // return of async actions\n\t\t\t\texpect(store.getActions()).toEqual(expectedActions);\n\t\t\t});\n\n\t});\n\n\tit('load site version when loading site versions', () => {\n\t\tconst expectedActions = [\n\t\t\t{ siteVersions: [], type: types.LOAD_SITEVERSIONS }\n\t\t];\n\n\t\tconst store = mockStore({ siteVersions: [] });\n\n\t\treturn store.dispatch(siteVersionActions.loadSiteVersions())\n\t\t\t.then(() => { // return of async actions\n\t\t\t\texpect(store.getActions()).toEqual(expectedActions);\n\t\t\t});\n\t});\n\n\tit('add site version action', () => {\n\t\tconst expectedActions = [\n\t\t\t{ siteVersion: {\n\t\t\t\tid: 1,\n        versionValue: '',\n        modeValue: '',\n        isActive: false,\n      }, type: types.CREATE_SITEVERSIONS }\n\t\t];\n\n\t\tconst store = mockStore({ siteVersions: [] });\n\n\t\treturn store.dispatch(siteVersionActions.addSiteVersion({\n\t\t\tversionValue: '',\n\t\t\tmodeValue: '',\n\t\t\tisActive: false,\n\t\t}))\n\t\t\t.then(() => { // return of async actions\n\t\t\t\texpect(store.getActions()).toEqual(expectedActions);\n\t\t\t});\n\t});\n\n\tit('Update Site Version action', () => {\n\t\tconst expectedActions = [\n\t\t\t{ siteVersion: {\n\t\t\t\tid: 1,\n        versionValue: '1.0',\n        modeValue: '2.0',\n        isActive: true,\n      }, type: types.UPDATE_SITEVERSIONS }\n\t\t];\n\n\t\tconst store = mockStore({ siteVersions: [] });\n\n\t\treturn store.dispatch(siteVersionActions.updateSiteVersion({\n\t\t\tid: 1,\n\t\t\tversionValue: '1.0',\n\t\t\tmodeValue: '2.0',\n\t\t\tisActive: true,\n\t\t}))\n\t\t\t.then(() => { // return of async actions\n\t\t\t\texpect(store.getActions()).toEqual(expectedActions);\n\t\t\t});\n\t});\n\n\tit('delete Site Version action', () => {\n\t\tconst expectedActions = [\n\t\t\t{ siteVersion: {\n\t\t\t\tid: 1,\n        versionValue: '1.0',\n        modeValue: '2.0',\n        isActive: true,\n      }, type: types.DELETE_SITEVERSIONS }\n\t\t];\n\n\t\tconst store = mockStore({ siteVersions: [] });\n\n\t\treturn store.dispatch(siteVersionActions.deleteSiteVersion({\n\t\t\tid: 1,\n\t\t\tversionValue: '1.0',\n\t\t\tmodeValue: '2.0',\n\t\t\tisActive: true,\n\t\t}))\n\t\t\t.then(() => { // return of async actions\n\t\t\t\texpect(store.getActions()).toEqual(expectedActions);\n\t\t\t});\n\t});\n\n});\n",
+    "static": true,
+    "longname": "src/actions/siteVersionActions.spec.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 14,
+    "kind": "variable",
+    "name": "middlewares",
+    "memberof": "src/actions/siteVersionActions.spec.js",
+    "static": true,
+    "longname": "src/actions/siteVersionActions.spec.js~middlewares",
+    "access": null,
+    "export": false,
+    "importPath": "wpp/src/actions/siteVersionActions.spec.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 9,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "undefined[]"
+      ]
+    }
+  },
+  {
+    "__docId__": 15,
+    "kind": "variable",
+    "name": "mockStore",
+    "memberof": "src/actions/siteVersionActions.spec.js",
+    "static": true,
+    "longname": "src/actions/siteVersionActions.spec.js~mockStore",
+    "access": null,
+    "export": false,
+    "importPath": "wpp/src/actions/siteVersionActions.spec.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 10,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 16,
+    "kind": "file",
+    "name": "src/actions/uploadActions.js",
+    "content": "import * as types from '../constants/actionTypes';\nimport MockUploadApi from './../api/mockUploadApi';\n\n/**\n * \n * \n * @export\n * @param {Array} files \n * @returns LOAD_FILES_SUCCESS and all uploaded files\n */\nexport function loadFilesSuccess(files) {\n  return { type: types.LOAD_FILES_SUCCESS, files };\n}\n\n/**\n * \n * \n * @export\n * @param {object} file \n * @returns UPLOAD_FILES_SUCCESS type and file object\n */\nexport function uploadFilesSuccess(file) {\n  return { type: types.UPLOAD_FILES_SUCCESS, file };\n}\n\n/**\n * \n * \n * @export\n * @returns if success then dispatch loadFilesSuccess else throw error\n */\nexport function loadFiles() {\n  return (dispatch) => {\n    return MockUploadApi.getAllfiles().then(files => {\n      dispatch(loadFilesSuccess(files));\n    }).catch(error => {\n      throw (error);\n    });\n  };\n}\n\n/**\n * \n * \n * @export\n * @param {object} data \n * @returns if success then dispatch uploadFilesSuccess else throw error\n */\nexport function uploadFiles(data) {\n  return (dispatch) => {\n    // fetch('url', { type: 'POST' })\n    return MockUploadApi.uploadFile(data).then(file => {\n      dispatch(uploadFilesSuccess(file));\n    }).catch(error => {\n      throw (error);\n    });\n  };\n}\n",
+    "static": true,
+    "longname": "src/actions/uploadActions.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 17,
+    "kind": "function",
+    "name": "loadFilesSuccess",
+    "memberof": "src/actions/uploadActions.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/actions/uploadActions.js~loadFilesSuccess",
+    "access": null,
+    "export": true,
+    "importPath": "wpp/src/actions/uploadActions.js",
+    "importStyle": "{loadFilesSuccess}",
+    "description": "",
+    "lineNumber": 11,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "LOAD_FILES_SUCCESS and all uploaded files"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "files",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "*"
+      ],
+      "spread": false,
+      "description": "LOAD_FILES_SUCCESS and all uploaded files"
+    }
+  },
+  {
+    "__docId__": 18,
+    "kind": "function",
+    "name": "uploadFilesSuccess",
+    "memberof": "src/actions/uploadActions.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/actions/uploadActions.js~uploadFilesSuccess",
+    "access": null,
+    "export": true,
+    "importPath": "wpp/src/actions/uploadActions.js",
+    "importStyle": "{uploadFilesSuccess}",
+    "description": "",
+    "lineNumber": 22,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "UPLOAD_FILES_SUCCESS type and file object"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "file",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "*"
+      ],
+      "spread": false,
+      "description": "UPLOAD_FILES_SUCCESS type and file object"
+    }
+  },
+  {
+    "__docId__": 19,
+    "kind": "function",
+    "name": "loadFiles",
+    "memberof": "src/actions/uploadActions.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/actions/uploadActions.js~loadFiles",
+    "access": null,
+    "export": true,
+    "importPath": "wpp/src/actions/uploadActions.js",
+    "importStyle": "{loadFiles}",
+    "description": "",
+    "lineNumber": 32,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "if success then dispatch loadFilesSuccess else throw error"
+      }
+    ],
+    "params": [],
+    "return": {
+      "nullable": null,
+      "types": [
+        "*"
+      ],
+      "spread": false,
+      "description": "if success then dispatch loadFilesSuccess else throw error"
+    }
+  },
+  {
+    "__docId__": 20,
+    "kind": "function",
+    "name": "uploadFiles",
+    "memberof": "src/actions/uploadActions.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/actions/uploadActions.js~uploadFiles",
+    "access": null,
+    "export": true,
+    "importPath": "wpp/src/actions/uploadActions.js",
+    "importStyle": "{uploadFiles}",
+    "description": "",
+    "lineNumber": 49,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "if success then dispatch uploadFilesSuccess else throw error"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "data",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "*"
+      ],
+      "spread": false,
+      "description": "if success then dispatch uploadFilesSuccess else throw error"
+    }
+  },
+  {
+    "__docId__": 21,
+    "kind": "file",
+    "name": "src/api/delay.js",
+    "content": "export default 0;\n",
+    "static": true,
+    "longname": "src/api/delay.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 22,
+    "kind": "file",
+    "name": "src/api/mockModeApi.js",
+    "content": "import delay from './delay';\n\n// This file mocks a web API by working with the hard-coded data below.\n// It uses setTimeout to simulate the delay of an AJAX call.\n// All calls return promises.\nconst modes = [\n  {\n    value: 'cory-house',\n    text: 'Cory',\n  },\n  {\n    value: 'scott-allen',\n    text: 'Scott',\n  },\n  {\n    value: 'dan-wahlin',\n    text: 'Dan',\n  }\n];\n\n\n/**\n * \n * \n * @class ModeApi\n */\nclass ModeApi {\n  /**\n   * \n   * \n   * @static\n   * @returns promise with all modes\n   * \n   * @memberOf ModeApi\n   */\n  static getAllModes() {\n    return new Promise((resolve) => {\n      setTimeout(() => {\n        resolve(Object.assign([], modes));\n      }, delay);\n    });\n  }\n\n}\n\nexport default ModeApi;",
+    "static": true,
+    "longname": "src/api/mockModeApi.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 23,
+    "kind": "variable",
+    "name": "modes",
+    "memberof": "src/api/mockModeApi.js",
+    "static": true,
+    "longname": "src/api/mockModeApi.js~modes",
+    "access": null,
+    "export": false,
+    "importPath": "wpp/src/api/mockModeApi.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 6,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "undefined[]"
+      ]
+    }
+  },
+  {
+    "__docId__": 24,
+    "kind": "class",
+    "name": "ModeApi",
+    "memberof": "src/api/mockModeApi.js",
+    "static": true,
+    "longname": "src/api/mockModeApi.js~ModeApi",
+    "access": null,
+    "export": true,
+    "importPath": "wpp/src/api/mockModeApi.js",
+    "importStyle": "ModeApi",
+    "description": "",
+    "lineNumber": 27,
+    "unknown": [
+      {
+        "tagName": "@class",
+        "tagValue": "ModeApi"
+      }
+    ],
+    "interface": false
+  },
+  {
+    "__docId__": 25,
+    "kind": "method",
+    "name": "getAllModes",
+    "memberof": "src/api/mockModeApi.js~ModeApi",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/api/mockModeApi.js~ModeApi.getAllModes",
+    "access": null,
+    "description": "",
+    "lineNumber": 36,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "promise with all modes"
+      },
+      {
+        "tagName": "@memberOf",
+        "tagValue": "ModeApi"
+      }
+    ],
+    "params": [],
+    "return": {
+      "nullable": null,
+      "types": [
+        "*"
+      ],
+      "spread": false,
+      "description": "promise with all modes"
+    }
+  },
+  {
+    "__docId__": 26,
+    "kind": "file",
+    "name": "src/api/mockSiteVersionApi.js",
+    "content": "import delay from './delay';\n\n// This file mocks a web API by working with the hard-coded data below.\n// It uses setTimeout to simulate the delay of an AJAX call.\n// All calls return promises.\nconst siteVersions = [];\n\n//This would be performed on the server in a real app. Just stubbing in.\n/**\n * \n * \n * @class SiteVersionApi\n */\nclass SiteVersionApi {\n  /**\n   * \n   * \n   * @static\n   * @returns \n   * \n   * @memberOf SiteVersionApi\n   */\n  static incrementId() {\n    if (!this.latestId) this.latestId = 1;\n    else this.latestId++;\n    return this.latestId;\n  }\n  /**\n   * \n   * \n   * @static\n   * @returns all siteVersion\n   * \n   * @memberOf SiteVersionApi\n   */\n  static getAllSiteVersions() {\n    return new Promise((resolve) => {\n      setTimeout(() => {\n        resolve(Object.assign([], siteVersions));\n      }, delay);\n    });\n  }\n\n  /**\n   * \n   * \n   * @static\n   * @param {object} siteVersion \n   * @returns prmise with added or updated siteVersion\n   * \n   * @memberOf SiteVersionApi\n   */\n  static saveSiteVersion(siteVersion) {\n    siteVersion = Object.assign({}, siteVersion); // to avoid manipulating object passed in.\n    return new Promise((resolve) => {\n      setTimeout(() => {\n        // Simulate server-side validation\n        if (siteVersion.id) {\n          const existingSiteVersionIndex = siteVersions.findIndex(a => a.id == siteVersion.id);\n          siteVersions.splice(existingSiteVersionIndex, 1, siteVersion);\n        } else {\n          //Just simulating creation here.\n          //The server would generate ids and watchHref's for new siteVersions in a real app.\n          //Cloning so copy returned is passed by value rather than by reference.\n          siteVersion.id = this.incrementId();\n          siteVersions.push(siteVersion);\n        }\n        resolve(siteVersion);\n      }, delay);\n    });\n  }\n\n  /**\n   * \n   * \n   * @static\n   * @param {number} siteVersionId \n   * @returns promise with null object\n   * \n   * @memberOf SiteVersionApi\n   */\n  static deleteSiteVersion(siteVersionId) {\n    return new Promise((resolve) => {\n      setTimeout(() => {\n        const indexOfSiteVersionToDelete = siteVersions.findIndex(siteVersion => {\n          siteVersion.id == siteVersionId;\n        });\n        siteVersions.splice(indexOfSiteVersionToDelete, 1);\n        resolve();\n      }, delay);\n    });\n  }\n}\n\nexport default SiteVersionApi;",
+    "static": true,
+    "longname": "src/api/mockSiteVersionApi.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 27,
+    "kind": "variable",
+    "name": "siteVersions",
+    "memberof": "src/api/mockSiteVersionApi.js",
+    "static": true,
+    "longname": "src/api/mockSiteVersionApi.js~siteVersions",
+    "access": null,
+    "export": false,
+    "importPath": "wpp/src/api/mockSiteVersionApi.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 6,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "*[]"
+      ]
+    }
+  },
+  {
+    "__docId__": 28,
+    "kind": "class",
+    "name": "SiteVersionApi",
+    "memberof": "src/api/mockSiteVersionApi.js",
+    "static": true,
+    "longname": "src/api/mockSiteVersionApi.js~SiteVersionApi",
+    "access": null,
+    "export": true,
+    "importPath": "wpp/src/api/mockSiteVersionApi.js",
+    "importStyle": "SiteVersionApi",
+    "description": "",
+    "lineNumber": 14,
+    "unknown": [
+      {
+        "tagName": "@class",
+        "tagValue": "SiteVersionApi"
+      }
+    ],
+    "interface": false
+  },
+  {
+    "__docId__": 29,
+    "kind": "method",
+    "name": "incrementId",
+    "memberof": "src/api/mockSiteVersionApi.js~SiteVersionApi",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/api/mockSiteVersionApi.js~SiteVersionApi.incrementId",
+    "access": null,
+    "description": "",
+    "lineNumber": 23,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": ""
+      },
+      {
+        "tagName": "@memberOf",
+        "tagValue": "SiteVersionApi"
+      }
+    ],
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 30,
+    "kind": "member",
+    "name": "latestId",
+    "memberof": "src/api/mockSiteVersionApi.js~SiteVersionApi",
+    "static": true,
+    "longname": "src/api/mockSiteVersionApi.js~SiteVersionApi.latestId",
+    "access": null,
+    "description": null,
+    "lineNumber": 24,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "number"
+      ]
+    }
+  },
+  {
+    "__docId__": 31,
+    "kind": "method",
+    "name": "getAllSiteVersions",
+    "memberof": "src/api/mockSiteVersionApi.js~SiteVersionApi",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/api/mockSiteVersionApi.js~SiteVersionApi.getAllSiteVersions",
+    "access": null,
+    "description": "",
+    "lineNumber": 36,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "all siteVersion"
+      },
+      {
+        "tagName": "@memberOf",
+        "tagValue": "SiteVersionApi"
+      }
+    ],
+    "params": [],
+    "return": {
+      "nullable": null,
+      "types": [
+        "*"
+      ],
+      "spread": false,
+      "description": "all siteVersion"
+    }
+  },
+  {
+    "__docId__": 32,
+    "kind": "method",
+    "name": "saveSiteVersion",
+    "memberof": "src/api/mockSiteVersionApi.js~SiteVersionApi",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/api/mockSiteVersionApi.js~SiteVersionApi.saveSiteVersion",
+    "access": null,
+    "description": "",
+    "lineNumber": 53,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "prmise with added or updated siteVersion"
+      },
+      {
+        "tagName": "@memberOf",
+        "tagValue": "SiteVersionApi"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "siteVersion",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "*"
+      ],
+      "spread": false,
+      "description": "prmise with added or updated siteVersion"
+    }
+  },
+  {
+    "__docId__": 33,
+    "kind": "method",
+    "name": "deleteSiteVersion",
+    "memberof": "src/api/mockSiteVersionApi.js~SiteVersionApi",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/api/mockSiteVersionApi.js~SiteVersionApi.deleteSiteVersion",
+    "access": null,
+    "description": "",
+    "lineNumber": 82,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "promise with null object"
+      },
+      {
+        "tagName": "@memberOf",
+        "tagValue": "SiteVersionApi"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "siteVersionId",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "*"
+      ],
+      "spread": false,
+      "description": "promise with null object"
+    }
+  },
+  {
+    "__docId__": 34,
+    "kind": "file",
+    "name": "src/api/mockUploadApi.js",
+    "content": "import delay from './delay';\n\n// This file mocks a web API by working with the hard-coded data below.\n// It uses setTimeout to simulate the delay of an AJAX call.\n// All calls return promises.\nconst files = [];\n\n/**\n * \n * \n * @class UploadApi\n */\nclass UploadApi {\n\tstatic incrementId() {\n\t\tif (!this.latestId) this.latestId = 1;\n\t\telse this.latestId++;\n\t\treturn this.latestId;\n\t}\n\n\t/**\n\t * \n\t * \n\t * @static\n\t * @returns all the uploaded files\n\t * \n\t * @memberOf UploadApi\n\t */\n\tstatic getAllfiles() {\n\t\treturn new Promise((resolve) => {\n\t\t\tsetTimeout(() => {\n\t\t\t\tresolve(Object.assign([], files));\n\t\t\t}, delay);\n\t\t});\n\t}\n\n\t/**\n\t * \n\t * \n\t * @static\n\t * @param {object} file \n\t * @returns promise with uploaded files\n\t * \n\t * @memberOf UploadApi\n\t */\n\tstatic uploadFile(file) {\n\t\tconst fls = file.files.map(value => Object.assign({}, { lastModified: value.lastModified, lastModifiedDate: value.lastModifiedDate, name: value.name, type: value.type, webkitRelativePath: value.webkitRelativePath }));\n\t\tfile = Object.assign({}, file, { files: fls });\n\t\treturn new Promise((resolve) => {\n\t\t\tsetTimeout(() => {\n\t\t\t\tfile.id = this.incrementId();\n\t\t\t\tfiles.push(file);\n\t\t\t\tresolve(Object.assign({}, file));\n\t\t\t}, delay);\n\t\t});\n\t}\n\n}\n\nexport default UploadApi;",
+    "static": true,
+    "longname": "src/api/mockUploadApi.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 35,
+    "kind": "variable",
+    "name": "files",
+    "memberof": "src/api/mockUploadApi.js",
+    "static": true,
+    "longname": "src/api/mockUploadApi.js~files",
+    "access": null,
+    "export": false,
+    "importPath": "wpp/src/api/mockUploadApi.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 6,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "*[]"
+      ]
+    }
+  },
+  {
+    "__docId__": 36,
+    "kind": "class",
+    "name": "UploadApi",
+    "memberof": "src/api/mockUploadApi.js",
+    "static": true,
+    "longname": "src/api/mockUploadApi.js~UploadApi",
+    "access": null,
+    "export": true,
+    "importPath": "wpp/src/api/mockUploadApi.js",
+    "importStyle": "UploadApi",
+    "description": "",
+    "lineNumber": 13,
+    "unknown": [
+      {
+        "tagName": "@class",
+        "tagValue": "UploadApi"
+      }
+    ],
+    "interface": false
+  },
+  {
+    "__docId__": 37,
+    "kind": "method",
+    "name": "incrementId",
+    "memberof": "src/api/mockUploadApi.js~UploadApi",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/api/mockUploadApi.js~UploadApi.incrementId",
+    "access": null,
+    "description": null,
+    "lineNumber": 14,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 38,
+    "kind": "member",
+    "name": "latestId",
+    "memberof": "src/api/mockUploadApi.js~UploadApi",
+    "static": true,
+    "longname": "src/api/mockUploadApi.js~UploadApi.latestId",
+    "access": null,
+    "description": null,
+    "lineNumber": 15,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "number"
+      ]
+    }
+  },
+  {
+    "__docId__": 39,
+    "kind": "method",
+    "name": "getAllfiles",
+    "memberof": "src/api/mockUploadApi.js~UploadApi",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/api/mockUploadApi.js~UploadApi.getAllfiles",
+    "access": null,
+    "description": "",
+    "lineNumber": 28,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "all the uploaded files"
+      },
+      {
+        "tagName": "@memberOf",
+        "tagValue": "UploadApi"
+      }
+    ],
+    "params": [],
+    "return": {
+      "nullable": null,
+      "types": [
+        "*"
+      ],
+      "spread": false,
+      "description": "all the uploaded files"
+    }
+  },
+  {
+    "__docId__": 40,
+    "kind": "method",
+    "name": "uploadFile",
+    "memberof": "src/api/mockUploadApi.js~UploadApi",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/api/mockUploadApi.js~UploadApi.uploadFile",
+    "access": null,
+    "description": "",
+    "lineNumber": 45,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "promise with uploaded files"
+      },
+      {
+        "tagName": "@memberOf",
+        "tagValue": "UploadApi"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "file",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "*"
+      ],
+      "spread": false,
+      "description": "promise with uploaded files"
+    }
+  },
+  {
+    "__docId__": 41,
+    "kind": "file",
+    "name": "src/api/mockVersionApi.js",
+    "content": "import delay from './delay';\n\n// This file mocks a web API by working with the hard-coded data below.\n// It uses setTimeout to simulate the delay of an AJAX call.\n// All calls return promises.\nconst versions = [\n  {\n    value: 'cory-house',\n    text: 'Cory',\n  },\n  {\n    value: 'scott-allen',\n    text: 'Scott',\n  },\n  {\n    value: 'dan-wahlin',\n    text: 'Dan',\n  }\n];\n\n\n/**\n * \n * \n * @class VersionApi\n */\nclass VersionApi {\n  /**\n   * \n   * \n   * @static\n   * @returns all the versions\n   * \n   * @memberOf VersionApi\n   */\n  static getAllVersions() {\n    return new Promise((resolve) => {\n      setTimeout(() => {\n        resolve(Object.assign([], versions));\n      }, delay);\n    });\n  }\n}\n\nexport default VersionApi;",
+    "static": true,
+    "longname": "src/api/mockVersionApi.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 42,
+    "kind": "variable",
+    "name": "versions",
+    "memberof": "src/api/mockVersionApi.js",
+    "static": true,
+    "longname": "src/api/mockVersionApi.js~versions",
+    "access": null,
+    "export": false,
+    "importPath": "wpp/src/api/mockVersionApi.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 6,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "undefined[]"
+      ]
+    }
+  },
+  {
+    "__docId__": 43,
+    "kind": "class",
+    "name": "VersionApi",
+    "memberof": "src/api/mockVersionApi.js",
+    "static": true,
+    "longname": "src/api/mockVersionApi.js~VersionApi",
+    "access": null,
+    "export": true,
+    "importPath": "wpp/src/api/mockVersionApi.js",
+    "importStyle": "VersionApi",
+    "description": "",
+    "lineNumber": 27,
+    "unknown": [
+      {
+        "tagName": "@class",
+        "tagValue": "VersionApi"
+      }
+    ],
+    "interface": false
+  },
+  {
+    "__docId__": 44,
+    "kind": "method",
+    "name": "getAllVersions",
+    "memberof": "src/api/mockVersionApi.js~VersionApi",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/api/mockVersionApi.js~VersionApi.getAllVersions",
+    "access": null,
+    "description": "",
+    "lineNumber": 36,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "all the versions"
+      },
+      {
+        "tagName": "@memberOf",
+        "tagValue": "VersionApi"
+      }
+    ],
+    "params": [],
+    "return": {
+      "nullable": null,
+      "types": [
+        "*"
+      ],
+      "spread": false,
+      "description": "all the versions"
+    }
+  },
+  {
+    "__docId__": 45,
+    "kind": "file",
+    "name": "src/components/App.js",
+    "content": "import React, { PropTypes } from 'react';\n// This is a class-based component because the current\n// version of hot reloading won't hot reload a stateless\n// component at the top-level.\n/**\n * \n * \n * @class App\n * @extends {React.Component}\n */\nclass App extends React.Component {\n  render() {\n    return (\n      <div>\n        {this.props.children}\n      </div>\n    );\n  }\n}\n\nApp.propTypes = {\n  children: PropTypes.element\n};\n\nexport default App;",
+    "static": true,
+    "longname": "src/components/App.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 46,
+    "kind": "class",
+    "name": "App",
+    "memberof": "src/components/App.js",
+    "static": true,
+    "longname": "src/components/App.js~App",
+    "access": null,
+    "export": true,
+    "importPath": "wpp/src/components/App.js",
+    "importStyle": "App",
+    "description": "",
+    "lineNumber": 11,
+    "unknown": [
+      {
+        "tagName": "@class",
+        "tagValue": "App"
+      }
+    ],
+    "interface": false,
+    "extends": [
+      "React.Component"
+    ]
+  },
+  {
+    "__docId__": 47,
+    "kind": "method",
+    "name": "render",
+    "memberof": "src/components/App.js~App",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/components/App.js~App#render",
+    "access": null,
+    "description": null,
+    "lineNumber": 12,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 48,
+    "kind": "file",
+    "name": "src/components/HomePage.js",
+    "content": "import React, { Component, PropTypes } from 'react';\n// import shallowCompare from 'react-addons-shallow-compare';\nimport { connect } from 'react-redux';\nimport { bindActionCreators } from 'redux';\nimport * as siteVersionActions from '../actions/siteVersionActions';\nimport * as uploadActions from '../actions/uploadActions';\nimport Dialog from 'material-ui/Dialog';\nimport FlatButton from 'material-ui/FlatButton';\nimport RaisedButton from 'material-ui/RaisedButton';\nimport { Table, TableBody, TableHeader, TableHeaderColumn, TableRow } from 'material-ui/Table';\nimport GridRow from '../containers/GridRow';\nimport Uploader from './Uploader';\n\n/**\n * \n * \n * @export\n * @class HomePage\n * @extends {Component}\n */\nexport class HomePage extends Component {\n  /**\n   * Creates an instance of HomePage.\n   * @param {any} props \n   * \n   * @memberOf HomePage\n   */\n  constructor(props) {\n    super(props);\n    this.state = {\n      defaultSiteVersion: {\n        versionValue: '',\n        modeValue: '',\n        isActive: false,\n      },\n      open: false,\n      UploaderData: {}\n    };\n    this.addSiteVersion = this.addSiteVersion.bind(this);\n    this.updateSiteVersion = this.updateSiteVersion.bind(this);\n    this.deleteSiteVersion = this.deleteSiteVersion.bind(this);\n    this.handleOpen = this.handleOpen.bind(this);\n    this.handleClose = this.handleClose.bind(this);\n    this.getUploaderData = this.getUploaderData.bind(this);\n    this.onSubmit = this.onSubmit.bind(this);\n  }\n\n  /**\n   * \n   * \n   * \n   * @memberOf HomePage\n   */\n  componentWillMount() {\n    this.props.siteVersionActions.loadModes();\n    this.props.siteVersionActions.loadVersions();\n    this.props.siteVersionActions.loadSiteVersions();\n    this.props.uploadActions.loadFiles();\n  }\n\n  /**\n   * \n   * \n   * @param {any} siteVersion \n   * \n   * @memberOf HomePage\n   */\n  addSiteVersion(siteVersion) {\n    this.props.siteVersionActions.addSiteVersion(siteVersion);\n  }\n\n  /**\n   * \n   * \n   * @param {any} siteVersion \n   * \n   * @memberOf HomePage\n   */\n  updateSiteVersion(siteVersion) {\n    this.props.siteVersionActions.updateSiteVersion(siteVersion);\n  }\n\n  /**\n   * \n   * \n   * @param {any} siteVersion \n   * \n   * @memberOf HomePage\n   */\n  deleteSiteVersion(siteVersion) {\n    this.props.siteVersionActions.deleteSiteVersion(siteVersion);\n  }\n\n  /**\n   * \n   * \n   * \n   * @memberOf HomePage\n   */\n  handleOpen() {\n    this.setState({ open: true });\n  }\n\n  /**\n   * \n   * \n   * \n   * @memberOf HomePage\n   */\n  handleClose() {\n    this.setState({ open: false });\n  }\n\n  /**\n   * \n   * \n   * @param {any} UploaderData \n   * \n   * @memberOf HomePage\n   */\n  getUploaderData(UploaderData) {\n    this.setState({ UploaderData });\n  }\n\n  /**\n   * \n   * \n   * \n   * @memberOf HomePage\n   */\n  onSubmit() {\n    this.setState({ open: false });\n    this.props.uploadActions.uploadFiles(this.state.UploaderData);\n  }\n\n  /**\n   * \n   * \n   * @returns \n   * \n   * @memberOf HomePage\n   */\n  render() {\n    // const uploadedFiles = this.props.files.map((fls, i) =>\n    //   <TableRow key={i}>\n    //     <TableRowColumn>\n    //       <ul>\n    //         {\n    //           fls.files.map((file, i) => <li key={i}>{file.name}</li>)\n    //         }\n    //       </ul>\n    //     </TableRowColumn>\n    //     <TableRowColumn>\n    //       {fls.ZipCheck ? 'True' : 'False'}\n    //     </TableRowColumn>\n    //     <TableRowColumn style={{ width: 24 }}>\n    //       {fls.PDFCheck ? 'True' : 'False'}\n    //     </TableRowColumn>\n    //   </TableRow>\n    // );\n\n    const gridRows = this.props.siteVersion.map((sv, i) =>\n      <GridRow\n        key={i}\n        versions={this.props.versions}\n        modes={this.props.modes}\n        siteVersion={sv}\n        deleteRow={this.deleteSiteVersion}\n        updateSiteVersion={this.updateSiteVersion}\n      />\n    );\n    const actions = [\n      <FlatButton\n        key=\"0\"\n        label=\"Cancel\"\n        primary={true}\n        onTouchTap={this.handleClose}\n      />,\n      <FlatButton\n        key=\"1\"\n        label=\"Upload and Create\"\n        primary={true}\n        onTouchTap={this.onSubmit}\n      />,\n    ];\n\n    return (\n      <div>\n        <RaisedButton primary={true} label=\"Add Site Version\" onClick={() => this.addSiteVersion(this.state.defaultSiteVersion)} labelStyle={{ textTransform: 'none' }} style={{ margin: '20px 0' }} />\n        <Table selectable={false} height=\"220px\" style={{ border: '1px solid rgb(224, 224, 224)' }}>\n          <TableHeader displaySelectAll={false} adjustForCheckbox={false}>\n            <TableRow>\n              <TableHeaderColumn style={{ textAlign: 'center' }} children=\"Version\" className=\"header\" />\n              <TableHeaderColumn style={{ textAlign: 'center' }} children=\"Mode\" />\n              <TableHeaderColumn style={{ width: 24, textAlign: 'center' }} children=\"Activate\" />\n              <TableHeaderColumn style={{ width: 24, textAlign: 'center' }} />\n            </TableRow>\n          </TableHeader>\n          <TableBody displayRowCheckbox={false}>\n            {gridRows}\n          </TableBody>\n        </Table>\n        <RaisedButton primary={true} label=\"Bulk Upload\" onTouchTap={this.handleOpen} labelStyle={{ textTransform: 'none' }}/>\n        <Dialog\n          actions={actions}\n          modal={true}\n          open={this.state.open}\n        >\n          <Uploader multiple={true} onDataChange={this.getUploaderData} />\n        </Dialog>\n\n      </div>\n    );\n  }\n}\n\nHomePage.propTypes = {\n  modes: PropTypes.array.isRequired,\n  versions: PropTypes.array.isRequired,\n  siteVersion: PropTypes.array.isRequired,\n  files: PropTypes.array.isRequired,\n  siteVersionActions: PropTypes.object.isRequired,\n  uploadActions: PropTypes.object.isRequired,\n};\n\n/**\n * \n * \n * @param {any} state \n * @returns \n */\nfunction mapStateToProps(state) {\n  return {\n    modes: state.modes,\n    versions: state.versions,\n    siteVersion: state.siteVersion,\n    files: state.uploadFile,\n  };\n}\n/**\n * \n * \n * @param {any} dispatch \n * @returns \n */\nfunction mapDispatchToProps(dispatch) {\n  return {\n    siteVersionActions: bindActionCreators(siteVersionActions, dispatch),\n    uploadActions: bindActionCreators(uploadActions, dispatch),\n  };\n}\n\nexport default connect(mapStateToProps, mapDispatchToProps)(HomePage);",
+    "static": true,
+    "longname": "src/components/HomePage.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 49,
+    "kind": "class",
+    "name": "HomePage",
+    "memberof": "src/components/HomePage.js",
+    "static": true,
+    "longname": "src/components/HomePage.js~HomePage",
+    "access": null,
+    "export": true,
+    "importPath": "wpp/src/components/HomePage.js",
+    "importStyle": "{HomePage}",
+    "description": "",
+    "lineNumber": 21,
+    "unknown": [
+      {
+        "tagName": "@class",
+        "tagValue": "HomePage"
+      }
+    ],
+    "interface": false,
+    "extends": [
+      "Component"
+    ]
+  },
+  {
+    "__docId__": 50,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/components/HomePage.js~HomePage",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/components/HomePage.js~HomePage#constructor",
+    "access": null,
+    "description": "Creates an instance of HomePage.",
+    "lineNumber": 28,
+    "unknown": [
+      {
+        "tagName": "@memberOf",
+        "tagValue": "HomePage"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "any"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "props",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "__docId__": 51,
+    "kind": "member",
+    "name": "state",
+    "memberof": "src/components/HomePage.js~HomePage",
+    "static": false,
+    "longname": "src/components/HomePage.js~HomePage#state",
+    "access": null,
+    "description": null,
+    "lineNumber": 30,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "{\"defaultSiteVersion\": *, \"open\": *, \"UploaderData\": *}"
+      ]
+    }
+  },
+  {
+    "__docId__": 52,
+    "kind": "member",
+    "name": "addSiteVersion",
+    "memberof": "src/components/HomePage.js~HomePage",
+    "static": false,
+    "longname": "src/components/HomePage.js~HomePage#addSiteVersion",
+    "access": null,
+    "description": null,
+    "lineNumber": 39,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 53,
+    "kind": "member",
+    "name": "updateSiteVersion",
+    "memberof": "src/components/HomePage.js~HomePage",
+    "static": false,
+    "longname": "src/components/HomePage.js~HomePage#updateSiteVersion",
+    "access": null,
+    "description": null,
+    "lineNumber": 40,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 54,
+    "kind": "member",
+    "name": "deleteSiteVersion",
+    "memberof": "src/components/HomePage.js~HomePage",
+    "static": false,
+    "longname": "src/components/HomePage.js~HomePage#deleteSiteVersion",
+    "access": null,
+    "description": null,
+    "lineNumber": 41,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 55,
+    "kind": "member",
+    "name": "handleOpen",
+    "memberof": "src/components/HomePage.js~HomePage",
+    "static": false,
+    "longname": "src/components/HomePage.js~HomePage#handleOpen",
+    "access": null,
+    "description": null,
+    "lineNumber": 42,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 56,
+    "kind": "member",
+    "name": "handleClose",
+    "memberof": "src/components/HomePage.js~HomePage",
+    "static": false,
+    "longname": "src/components/HomePage.js~HomePage#handleClose",
+    "access": null,
+    "description": null,
+    "lineNumber": 43,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 57,
+    "kind": "member",
+    "name": "getUploaderData",
+    "memberof": "src/components/HomePage.js~HomePage",
+    "static": false,
+    "longname": "src/components/HomePage.js~HomePage#getUploaderData",
+    "access": null,
+    "description": null,
+    "lineNumber": 44,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 58,
+    "kind": "member",
+    "name": "onSubmit",
+    "memberof": "src/components/HomePage.js~HomePage",
+    "static": false,
+    "longname": "src/components/HomePage.js~HomePage#onSubmit",
+    "access": null,
+    "description": null,
+    "lineNumber": 45,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 59,
+    "kind": "method",
+    "name": "componentWillMount",
+    "memberof": "src/components/HomePage.js~HomePage",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/components/HomePage.js~HomePage#componentWillMount",
+    "access": null,
+    "description": "",
+    "lineNumber": 54,
+    "unknown": [
+      {
+        "tagName": "@memberOf",
+        "tagValue": "HomePage"
+      }
+    ],
+    "params": []
+  },
+  {
+    "__docId__": 60,
+    "kind": "method",
+    "name": "addSiteVersion",
+    "memberof": "src/components/HomePage.js~HomePage",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/components/HomePage.js~HomePage#addSiteVersion",
+    "access": null,
+    "description": "",
+    "lineNumber": 68,
+    "unknown": [
+      {
+        "tagName": "@memberOf",
+        "tagValue": "HomePage"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "any"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "siteVersion",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "__docId__": 61,
+    "kind": "method",
+    "name": "updateSiteVersion",
+    "memberof": "src/components/HomePage.js~HomePage",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/components/HomePage.js~HomePage#updateSiteVersion",
+    "access": null,
+    "description": "",
+    "lineNumber": 79,
+    "unknown": [
+      {
+        "tagName": "@memberOf",
+        "tagValue": "HomePage"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "any"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "siteVersion",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "__docId__": 62,
+    "kind": "method",
+    "name": "deleteSiteVersion",
+    "memberof": "src/components/HomePage.js~HomePage",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/components/HomePage.js~HomePage#deleteSiteVersion",
+    "access": null,
+    "description": "",
+    "lineNumber": 90,
+    "unknown": [
+      {
+        "tagName": "@memberOf",
+        "tagValue": "HomePage"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "any"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "siteVersion",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "__docId__": 63,
+    "kind": "method",
+    "name": "handleOpen",
+    "memberof": "src/components/HomePage.js~HomePage",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/components/HomePage.js~HomePage#handleOpen",
+    "access": null,
+    "description": "",
+    "lineNumber": 100,
+    "unknown": [
+      {
+        "tagName": "@memberOf",
+        "tagValue": "HomePage"
+      }
+    ],
+    "params": []
+  },
+  {
+    "__docId__": 64,
+    "kind": "method",
+    "name": "handleClose",
+    "memberof": "src/components/HomePage.js~HomePage",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/components/HomePage.js~HomePage#handleClose",
+    "access": null,
+    "description": "",
+    "lineNumber": 110,
+    "unknown": [
+      {
+        "tagName": "@memberOf",
+        "tagValue": "HomePage"
+      }
+    ],
+    "params": []
+  },
+  {
+    "__docId__": 65,
+    "kind": "method",
+    "name": "getUploaderData",
+    "memberof": "src/components/HomePage.js~HomePage",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/components/HomePage.js~HomePage#getUploaderData",
+    "access": null,
+    "description": "",
+    "lineNumber": 121,
+    "unknown": [
+      {
+        "tagName": "@memberOf",
+        "tagValue": "HomePage"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "any"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "UploaderData",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "__docId__": 66,
+    "kind": "method",
+    "name": "onSubmit",
+    "memberof": "src/components/HomePage.js~HomePage",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/components/HomePage.js~HomePage#onSubmit",
+    "access": null,
+    "description": "",
+    "lineNumber": 131,
+    "unknown": [
+      {
+        "tagName": "@memberOf",
+        "tagValue": "HomePage"
+      }
+    ],
+    "params": []
+  },
+  {
+    "__docId__": 67,
+    "kind": "method",
+    "name": "render",
+    "memberof": "src/components/HomePage.js~HomePage",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/components/HomePage.js~HomePage#render",
+    "access": null,
+    "description": "",
+    "lineNumber": 143,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": ""
+      },
+      {
+        "tagName": "@memberOf",
+        "tagValue": "HomePage"
+      }
+    ],
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 68,
+    "kind": "function",
+    "name": "mapStateToProps",
+    "memberof": "src/components/HomePage.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/components/HomePage.js~mapStateToProps",
+    "access": null,
+    "export": false,
+    "importPath": "wpp/src/components/HomePage.js",
+    "importStyle": null,
+    "description": "",
+    "lineNumber": 232,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "any"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "state",
+        "description": ""
+      }
+    ],
+    "return": {
+      "types": [
+        "{\"modes\": *, \"versions\": *, \"siteVersion\": *, \"files\": *}"
+      ]
+    }
+  },
+  {
+    "__docId__": 69,
+    "kind": "function",
+    "name": "mapDispatchToProps",
+    "memberof": "src/components/HomePage.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/components/HomePage.js~mapDispatchToProps",
+    "access": null,
+    "export": false,
+    "importPath": "wpp/src/components/HomePage.js",
+    "importStyle": null,
+    "description": "",
+    "lineNumber": 246,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "any"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "dispatch",
+        "description": ""
+      }
+    ],
+    "return": {
+      "types": [
+        "{\"siteVersionActions\": *, \"uploadActions\": *}"
+      ]
+    }
+  },
+  {
+    "__docId__": 70,
+    "kind": "file",
+    "name": "src/components/HomePage.spec.js",
+    "content": "import React from 'react';\nimport { shallow } from 'enzyme';\nimport { HomePage } from './HomePage';\n\nfunction setup() {\n\tconst props = {\n\t\tmodes: [],\n\t\tversions: [],\n\t\tsiteVersion: [{\n\t\t\tid: 1,\n\t\t\tversionValue: '',\n\t\t\tmodeValue: '',\n\t\t\tisActive: false\n\t\t},\n\t\t{\n\t\t\tid: 2,\n\t\t\tversionValue: '',\n\t\t\tmodeValue: '',\n\t\t\tisActive: false\n\t\t}],\n\t\tfiles: [],\n\t\tuploadActions: {\n\t\t\tloadFiles: () => { return Promise.resolve(); },\n\t\t\tuploadFiles: jest.fn()\n\t\t},\n\t\tsiteVersionActions: {\n\t\t\tloadModes: () => { return Promise.resolve(); },\n\t\t\tloadVersions: () => { return Promise.resolve(); },\n\t\t\tloadSiteVersions: () => { return Promise.resolve(); },\n\t\t\taddSiteVersion: jest.fn()\n\t\t},\n\n\t};\n\n\tconst enzymeWrapper = shallow(<HomePage {...props} />);\n\n\treturn {\n\t\tprops,\n\t\tenzymeWrapper\n\t};\n}\n\ndescribe('Home page', () => {\n\tit('should render self and subcomponents', () => {\n\t\tconst { enzymeWrapper } = setup();\n\n\t\tconst raisedButtonProps = enzymeWrapper.find('RaisedButton').at(0).props();\n\t\texpect(raisedButtonProps.primary).toBe(true);\n\t\texpect(raisedButtonProps.label).toEqual('Add Site Version');\n\n\t\tconst tableProps = enzymeWrapper.find('Table').at(0).props();\n\t\texpect(tableProps.selectable).toBe(false);\n\t\texpect(tableProps.height).toEqual('220px');\n\n\t\texpect(enzymeWrapper.find('Table').at(0).childAt(0).is('TableHeader')).toBe(true);\n\n\t\texpect(enzymeWrapper.find('TableHeader').at(0).childAt(0).is('TableRow')).toBe(true);\n\n\t\texpect(enzymeWrapper.find('TableRow').at(0).children().length).toBe(4);\n\n\t\texpect(enzymeWrapper.find('TableRow').at(0).childAt(0).props().children).toEqual('Version');\n\t\texpect(enzymeWrapper.find('TableRow').at(0).childAt(1).props().children).toEqual('Mode');\n\t\texpect(enzymeWrapper.find('TableRow').at(0).childAt(2).props().children).toEqual('Activate');\n\t\texpect(enzymeWrapper.find('TableRow').at(0).childAt(4).props().children).toBeUndefined();\n\n\t\texpect(enzymeWrapper.find('Table').at(0).childAt(1).is('TableBody')).toBe(true);\n\n\t\t//check model dialog button is available or not\n\t\tconst modelDialog = enzymeWrapper.find('RaisedButton').at(1).props();\n\t\texpect(modelDialog.label).toEqual('Bulk Upload');\n\n\t\t//is dialog is available o not\n\t\tconst dialog = enzymeWrapper.find('Dialog').props();\n\t\texpect(dialog.modal).toBe(true);\n\t\texpect(dialog.open).toBe(false);\n\n\t\texpect(enzymeWrapper.find('Dialog').childAt(0).is('Uploader')).toBe(true);\n\n\t});\n\n\tit('should call addSiteVersion', () => {\n\t\tconst { enzymeWrapper, props } = setup();\n\t\tconst input = enzymeWrapper.find('RaisedButton').at(0);\n\t\tinput.props().onClick();\n\t\texpect(props.siteVersionActions.addSiteVersion.mock.calls.length).toBe(1);\n\t});\n\n\tit('should load site versions', () => {\n\t\tconst { enzymeWrapper } = setup();\n\t\tconst tableBody = enzymeWrapper.find('Table').childAt(1);\n\t\texpect(tableBody.children().length).toBe(2);\n\t});\n\n\tit('should open dialog on click event',() => {\n\t\tconst { enzymeWrapper } = setup();\n\t\tconst input = enzymeWrapper.find('RaisedButton').at(1);\n\t\tinput.props().onTouchTap();\n\t\tconst dialog = enzymeWrapper.find('Dialog').props();\n\t\texpect(dialog.modal).toBe(true);\n\t\texpect(dialog.open).toBe(true);\n\n\t});\n});\n\n\n\n",
+    "static": true,
+    "longname": "src/components/HomePage.spec.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 71,
+    "kind": "function",
+    "name": "setup",
+    "memberof": "src/components/HomePage.spec.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/components/HomePage.spec.js~setup",
+    "access": null,
+    "export": false,
+    "importPath": "wpp/src/components/HomePage.spec.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 5,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [],
+    "return": {
+      "types": [
+        "{\"props\": *, \"enzymeWrapper\": *}"
+      ]
+    }
+  },
+  {
+    "__docId__": 72,
+    "kind": "file",
+    "name": "src/components/NotFoundPage.js",
+    "content": "import React from 'react';\nimport { Link } from 'react-router';\n\nconst NotFoundPage = () => {\n  return (\n    <div>\n      <h4>\n        404 Page Not Found\n      </h4>\n      <Link to=\"/\"> Go back to homepage </Link>\n    </div>\n  );\n};\n\nexport default NotFoundPage;",
+    "static": true,
+    "longname": "src/components/NotFoundPage.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 73,
+    "kind": "function",
+    "name": "NotFoundPage",
+    "memberof": "src/components/NotFoundPage.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/components/NotFoundPage.js~NotFoundPage",
+    "access": null,
+    "export": true,
+    "importPath": "wpp/src/components/NotFoundPage.js",
+    "importStyle": "NotFoundPage",
+    "description": null,
+    "lineNumber": 4,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 74,
+    "kind": "file",
+    "name": "src/components/Uploader.spec.js",
+    "content": "import React from 'react';\nimport { shallow } from 'enzyme';\nimport { Uploader } from './Uploader';\n\n/**\n * \n * \n * @returns \n */\nfunction setupShallow() {\n\tconst props = {\n\t\tmultiple: false,\n\t\tonDataChange: jest.fn()\n\t};\n\tconst enzymeWrapper = shallow(<Uploader {...props} />);\n\treturn {\n\t\tprops,\n\t\tenzymeWrapper\n\t};\n}\n\n\ndescribe('Uploader', () => {\n\n\tit('should render self and subcomponents', () => {\n\t\tconst { enzymeWrapper, props } = setupShallow();\n\n\t\tconst dropzon = enzymeWrapper.find('Dropzone').props();\n\t\texpect(dropzon.multiple).toBe(props.multiple);\n\n\t\texpect(enzymeWrapper.find('Dropzone').childAt(0).is('div')).toBe(true);\n\t\texpect(enzymeWrapper.find('Dropzone').childAt(0).is('div')).toBe(true);\n\t\texpect(enzymeWrapper.find('Dropzone').childAt(0).childAt(0).is('p')).toBe(true);\n\t\texpect(enzymeWrapper.find('Dropzone').childAt(0).childAt(1).is('RaisedButton')).toBe(true);\n\n\t});\n\n\tit('should render Extract zip content', () => {\n\t\tconst { enzymeWrapper } = setupShallow();\n\t\tenzymeWrapper.setState({ isZipFileAvailable: true });\n\t\tconst zipChekbox = enzymeWrapper.find('Checkbox').props();\n\t\texpect(zipChekbox.label).toBe('Extract zip content');\n\t});\n\n\tit('should render Display PDF in viewer', () => {\n\t\tconst { enzymeWrapper } = setupShallow();\n\t\tenzymeWrapper.setState({ isPDFFileAvailable: true });\n\t\tconst pdfChekbox = enzymeWrapper.find('Checkbox').props();\n\t\texpect(pdfChekbox.label).toBe('Display PDF in viewer');\n\t});\n\n\tit('should render both checkbox', () => {\n\t\tconst { enzymeWrapper } = setupShallow();\n\t\tenzymeWrapper.setState({ isZipFileAvailable: true, isPDFFileAvailable: true });\n\t\tconst zipChekbox = enzymeWrapper.find('Checkbox').at(0).props();\n\t\tconst pdfChekbox = enzymeWrapper.find('Checkbox').at(1).props();\n\t\texpect(zipChekbox.label).toBe('Extract zip content');\n\t\texpect(pdfChekbox.label).toBe('Display PDF in viewer');\n\t});\n});",
+    "static": true,
+    "longname": "src/components/Uploader.spec.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 75,
+    "kind": "function",
+    "name": "setupShallow",
+    "memberof": "src/components/Uploader.spec.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/components/Uploader.spec.js~setupShallow",
+    "access": null,
+    "export": false,
+    "importPath": "wpp/src/components/Uploader.spec.js",
+    "importStyle": null,
+    "description": "",
+    "lineNumber": 10,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": ""
+      }
+    ],
+    "params": [],
+    "return": {
+      "types": [
+        "{\"props\": *, \"enzymeWrapper\": *}"
+      ]
+    }
+  },
+  {
+    "__docId__": 76,
+    "kind": "file",
+    "name": "src/constants/actionTypes.js",
+    "content": "export const LOAD_MODES = 'LOAD_MODES';\nexport const LOAD_VERSIONS = 'LOAD_VERSIONS';\nexport const LOAD_SITEVERSIONS = 'LOAD_SITEVERSIONS';\nexport const CREATE_SITEVERSIONS = 'CREATE_SITEVERSIONS';\nexport const UPDATE_SITEVERSIONS = 'UPDATE_SITEVERSIONS';\nexport const DELETE_SITEVERSIONS = 'DELETE_SITEVERSIONS';\nexport const UPLOAD_FILES_SUCCESS = 'UPLOAD_FILES_SUCCESS';\nexport const LOAD_FILES_SUCCESS = 'LOAD_FILES_SUCCESS';\n",
+    "static": true,
+    "longname": "src/constants/actionTypes.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 77,
+    "kind": "variable",
+    "name": "LOAD_MODES",
+    "memberof": "src/constants/actionTypes.js",
+    "static": true,
+    "longname": "src/constants/actionTypes.js~LOAD_MODES",
+    "access": null,
+    "export": true,
+    "importPath": "wpp/src/constants/actionTypes.js",
+    "importStyle": "{LOAD_MODES}",
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 78,
+    "kind": "variable",
+    "name": "LOAD_VERSIONS",
+    "memberof": "src/constants/actionTypes.js",
+    "static": true,
+    "longname": "src/constants/actionTypes.js~LOAD_VERSIONS",
+    "access": null,
+    "export": true,
+    "importPath": "wpp/src/constants/actionTypes.js",
+    "importStyle": "{LOAD_VERSIONS}",
+    "description": null,
+    "lineNumber": 2,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 79,
+    "kind": "variable",
+    "name": "LOAD_SITEVERSIONS",
+    "memberof": "src/constants/actionTypes.js",
+    "static": true,
+    "longname": "src/constants/actionTypes.js~LOAD_SITEVERSIONS",
+    "access": null,
+    "export": true,
+    "importPath": "wpp/src/constants/actionTypes.js",
+    "importStyle": "{LOAD_SITEVERSIONS}",
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 80,
+    "kind": "variable",
+    "name": "CREATE_SITEVERSIONS",
+    "memberof": "src/constants/actionTypes.js",
+    "static": true,
+    "longname": "src/constants/actionTypes.js~CREATE_SITEVERSIONS",
+    "access": null,
+    "export": true,
+    "importPath": "wpp/src/constants/actionTypes.js",
+    "importStyle": "{CREATE_SITEVERSIONS}",
+    "description": null,
+    "lineNumber": 4,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 81,
+    "kind": "variable",
+    "name": "UPDATE_SITEVERSIONS",
+    "memberof": "src/constants/actionTypes.js",
+    "static": true,
+    "longname": "src/constants/actionTypes.js~UPDATE_SITEVERSIONS",
+    "access": null,
+    "export": true,
+    "importPath": "wpp/src/constants/actionTypes.js",
+    "importStyle": "{UPDATE_SITEVERSIONS}",
+    "description": null,
+    "lineNumber": 5,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 82,
+    "kind": "variable",
+    "name": "DELETE_SITEVERSIONS",
+    "memberof": "src/constants/actionTypes.js",
+    "static": true,
+    "longname": "src/constants/actionTypes.js~DELETE_SITEVERSIONS",
+    "access": null,
+    "export": true,
+    "importPath": "wpp/src/constants/actionTypes.js",
+    "importStyle": "{DELETE_SITEVERSIONS}",
+    "description": null,
+    "lineNumber": 6,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 83,
+    "kind": "variable",
+    "name": "UPLOAD_FILES_SUCCESS",
+    "memberof": "src/constants/actionTypes.js",
+    "static": true,
+    "longname": "src/constants/actionTypes.js~UPLOAD_FILES_SUCCESS",
+    "access": null,
+    "export": true,
+    "importPath": "wpp/src/constants/actionTypes.js",
+    "importStyle": "{UPLOAD_FILES_SUCCESS}",
+    "description": null,
+    "lineNumber": 7,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 84,
+    "kind": "variable",
+    "name": "LOAD_FILES_SUCCESS",
+    "memberof": "src/constants/actionTypes.js",
+    "static": true,
+    "longname": "src/constants/actionTypes.js~LOAD_FILES_SUCCESS",
+    "access": null,
+    "export": true,
+    "importPath": "wpp/src/constants/actionTypes.js",
+    "importStyle": "{LOAD_FILES_SUCCESS}",
+    "description": null,
+    "lineNumber": 8,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 85,
+    "kind": "file",
+    "name": "src/containers/GridRow.spec.js",
+    "content": "import React from 'react';\nimport { shallow } from 'enzyme';\nimport GridRow from './GridRow';\nimport AutoComplete from 'material-ui/AutoComplete';\nimport Checkbox from 'material-ui/Checkbox';\nimport IconButton from 'material-ui/IconButton';\n\nfunction setup() {\n\tconst props = {\n\t\tversions: [],\n\t\tmodes: [],\n\t\tsiteVersion: {\n\t\t\tid: 1,\n\t\t\tversionValue: '',\n\t\t\tmodeValue: '',\n\t\t\tisActive: false\n\t\t},\n\t\tdeleteRow: jest.fn(),\n\t\tupdateSiteVersion: jest.fn(),\n\t};\n\n\tconst enzymeWrapper = shallow(<GridRow {...props} />);\n\n\treturn {\n\t\tprops,\n\t\tenzymeWrapper\n\t};\n}\n\ndescribe('GridRow', () => {\n\tit('should render self and subcomponents', () => {\n\t\tconst { enzymeWrapper } = setup();\n\n\t\tconst tableRow = enzymeWrapper.find('TableRow');\n\t\texpect(tableRow.props().id).toBe(1);\n\n\t\texpect(tableRow.children().length).toBe(4);\n\n\t\texpect(tableRow.childAt(0).childAt(0).type()).toEqual(AutoComplete);\n\t\texpect(tableRow.childAt(1).childAt(0).type()).toEqual(AutoComplete);\n\t\texpect(tableRow.childAt(2).childAt(0).type()).toEqual(Checkbox);\n\t\texpect(tableRow.childAt(3).childAt(0).type()).toEqual(IconButton);\n\n\t\texpect(tableRow.childAt(2).childAt(0).props().disabled).toBe(true);\n\t});\n\n\tit('should call updateSiteVersion on version change', () => {\n\t\tconst { enzymeWrapper, props } = setup();\n\t\tconst tableRow = enzymeWrapper.find('TableRow');\n\t\tconst input = tableRow.childAt(0).childAt(0);\n\t\tinput.props().onUpdateInput();\n\t\texpect(props.updateSiteVersion.mock.calls.length).toBe(1);\n\t});\n\n\tit('should call updateSiteVersion on mode change', () => {\n\t\tconst { enzymeWrapper, props } = setup();\n\t\tconst tableRow = enzymeWrapper.find('TableRow');\n\t\tconst input = tableRow.childAt(1).childAt(0);\n\t\tinput.props().onUpdateInput();\n\t\texpect(props.updateSiteVersion.mock.calls.length).toBe(1);\n\t});\n\n\tit('should call updateSiteVersion on isactive change', () => {\n\t\tconst { enzymeWrapper, props } = setup();\n\t\tconst tableRow = enzymeWrapper.find('TableRow');\n\t\tconst input = tableRow.childAt(2).childAt(0);\n\t\tinput.props().onCheck();\n\t\texpect(props.updateSiteVersion.mock.calls.length).toBe(1);\n\t});\n\n\tit('should call deleteRow on delete icon click', () => {\n\t\tconst { enzymeWrapper, props } = setup();\n\t\tconst tableRow = enzymeWrapper.find('TableRow');\n\t\tconst input = tableRow.childAt(3).childAt(0);\n\t\tinput.props().onClick();\n\t\texpect(props.deleteRow.mock.calls.length).toBe(1);\n\t});\n});\n\n\n\n\n\n",
+    "static": true,
+    "longname": "src/containers/GridRow.spec.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 86,
+    "kind": "function",
+    "name": "setup",
+    "memberof": "src/containers/GridRow.spec.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/containers/GridRow.spec.js~setup",
+    "access": null,
+    "export": false,
+    "importPath": "wpp/src/containers/GridRow.spec.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 8,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [],
+    "return": {
+      "types": [
+        "{\"props\": *, \"enzymeWrapper\": *}"
+      ]
+    }
+  },
+  {
+    "__docId__": 87,
+    "kind": "file",
+    "name": "src/index.js",
+    "content": "/* eslint-disable import/default */\n\nimport React from 'react';\nimport { render } from 'react-dom';\nimport { Provider } from 'react-redux';\nimport { Router, browserHistory } from 'react-router';\nimport routes from './routes';\nimport configureStore from './store/configureStore';\nrequire('./favicon.ico'); // Tell webpack to load favicon.ico\nimport './styles/styles.scss'; // Yep, that's right. You can import SASS/CSS files too! Webpack will run the associated loader and plug this into the page.\nimport { syncHistoryWithStore } from 'react-router-redux';\n\nimport MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';\nimport injectTapEventPlugin from 'react-tap-event-plugin';\n\ninjectTapEventPlugin();\n\nconst store = configureStore();\n\n// Create an enhanced history that syncs navigation events with the store\nconst history = syncHistoryWithStore(browserHistory, store);\n\n/**\n * Bootstrap Application\n */\nrender(\n  <Provider store={store}>\n    <MuiThemeProvider>\n      <Router history={history} routes={routes} />\n    </MuiThemeProvider>\n  </Provider>, document.getElementById('app')\n);",
+    "static": true,
+    "longname": "src/index.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 88,
+    "kind": "variable",
+    "name": "store",
+    "memberof": "src/index.js",
+    "static": true,
+    "longname": "src/index.js~store",
+    "access": null,
+    "export": false,
+    "importPath": "wpp/src/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 18,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 89,
+    "kind": "variable",
+    "name": "history",
+    "memberof": "src/index.js",
+    "static": true,
+    "longname": "src/index.js~history",
+    "access": null,
+    "export": false,
+    "importPath": "wpp/src/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 21,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 90,
+    "kind": "file",
+    "name": "src/reducers/index.js",
+    "content": "import { combineReducers } from 'redux';\nimport { modes } from './modeReducer';\nimport { versions } from './versionReducer';\nimport siteVersion from './siteVersionReducer';\nimport uploadFile from './uploadFileReducer';\nimport { routerReducer } from 'react-router-redux';\n\nconst rootReducer = combineReducers({\n  modes,\n  versions,\n  siteVersion,\n  uploadFile,\n  routing: routerReducer\n});\n\nexport default rootReducer;",
+    "static": true,
+    "longname": "src/reducers/index.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 91,
+    "kind": "variable",
+    "name": "rootReducer",
+    "memberof": "src/reducers/index.js",
+    "static": true,
+    "longname": "src/reducers/index.js~rootReducer",
+    "access": null,
+    "export": true,
+    "importPath": "wpp/src/reducers/index.js",
+    "importStyle": "rootReducer",
+    "description": null,
+    "lineNumber": 8,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 92,
+    "kind": "file",
+    "name": "src/reducers/initialState.js",
+    "content": "",
+    "static": true,
+    "longname": "src/reducers/initialState.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 93,
+    "kind": "file",
+    "name": "src/reducers/modeReducer.js",
+    "content": "import * as types from '../constants/actionTypes';\n// import initialState from './initialState';\n\nexport /**\n * \n * \n * @param {Array} [state=[]] \n * @param {object} action \n * @returns modes state\n */\nconst modes = (state = [], action) => {\n  switch (action.type) {\n    case types.LOAD_MODES:\n      return action.modes;\n    default:\n      return state;\n  }\n};",
+    "static": true,
+    "longname": "src/reducers/modeReducer.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 94,
+    "kind": "function",
+    "name": "modes",
+    "memberof": "src/reducers/modeReducer.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/reducers/modeReducer.js~modes",
+    "access": null,
+    "export": true,
+    "importPath": "wpp/src/reducers/modeReducer.js",
+    "importStyle": "{modes}",
+    "description": "",
+    "lineNumber": 11,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "modes state"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Array"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": "[]",
+        "defaultRaw": [],
+        "name": "state",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "action",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "*"
+      ],
+      "spread": false,
+      "description": "modes state"
+    }
+  },
+  {
+    "__docId__": 95,
+    "kind": "file",
+    "name": "src/reducers/modeReducer.spec.js",
+    "content": "import { modes } from './modeReducer';\nimport * as types from '../constants/actionTypes';\n\ndescribe('mode reducer', () => {\n\tit('should return the initial state', () => {\n\t\texpect(\n\t\t\tmodes(undefined, {})\n\t\t).toEqual([]);\n\t});\n\tit('should handle load modes', () => {\n\t\texpect(\n\t\t\tmodes([], {\n\t\t\t\ttype: types.LOAD_MODES,\n\t\t\t\tmodes: [\n\t\t\t\t\t{\n\t\t\t\t\t\tvalue: 'cory-house',\n\t\t\t\t\t\ttext: 'Cory',\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\tvalue: 'scott-allen',\n\t\t\t\t\t\ttext: 'Scott',\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\tvalue: 'dan-wahlin',\n\t\t\t\t\t\ttext: 'Dan',\n\t\t\t\t\t}\n\t\t\t\t]\n\t\t\t})\n\t\t).toEqual(\n\t\t\t[\n\t\t\t\t{\n\t\t\t\t\tvalue: 'cory-house',\n\t\t\t\t\ttext: 'Cory',\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\tvalue: 'scott-allen',\n\t\t\t\t\ttext: 'Scott',\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\tvalue: 'dan-wahlin',\n\t\t\t\t\ttext: 'Dan',\n\t\t\t\t}\n\t\t\t]\n\t\t\t);\n\t});\n\n});",
+    "static": true,
+    "longname": "src/reducers/modeReducer.spec.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 96,
+    "kind": "file",
+    "name": "src/reducers/siteVersionReducer.spec.js",
+    "content": "import reducer from './siteVersionReducer';\nimport * as types from '../constants/actionTypes';\n\ndescribe('mode reducer', () => {\n\tit('should return the initial state', () => {\n\t\texpect(\n\t\t\treducer(undefined, {})\n\t\t).toEqual([]);\n\t});\n\tit('should handle load site Versions', () => {\n\t\texpect(\n\t\t\treducer([], {\n\t\t\t\ttype: types.LOAD_SITEVERSIONS,\n\t\t\t\tsiteVersions: []\n\t\t\t})\n\t\t).toEqual(\n\t\t\t[]\n\t\t\t);\n\t});\n\tit('should handle create site Versions', () => {\n\t\texpect(\n\t\t\treducer([], {\n\t\t\t\ttype: types.CREATE_SITEVERSIONS,\n\t\t\t\tsiteVersion: {\n\t\t\t\t\tid: 1,\n\t\t\t\t\tversionValue: '',\n\t\t\t\t\tmodeValue: '',\n\t\t\t\t\tisActive: false\n\t\t\t\t}\n\t\t\t})\n\t\t).toEqual(\n\t\t\t[{\n\t\t\t\tid: 1,\n\t\t\t\tversionValue: '',\n\t\t\t\tmodeValue: '',\n\t\t\t\tisActive: false\n\t\t\t}]\n\t\t\t);\n\t});\n\tit('should handle update site Versions', () => {\n\t\texpect(\n\t\t\treducer([{\n\t\t\t\tid: 1,\n\t\t\t\tversionValue: '',\n\t\t\t\tmodeValue: '',\n\t\t\t\tisActive: false\n\t\t\t}], {\n\t\t\t\t\ttype: types.UPDATE_SITEVERSIONS,\n\t\t\t\t\tsiteVersion: {\n\t\t\t\t\t\tid: 1,\n\t\t\t\t\t\tversionValue: '1.0',\n\t\t\t\t\t\tmodeValue: '2.0',\n\t\t\t\t\t\tisActive: true\n\t\t\t\t\t}\n\t\t\t\t})\n\t\t).toEqual(\n\t\t\t[{\n\t\t\t\tid: 1,\n\t\t\t\tversionValue: '1.0',\n\t\t\t\tmodeValue: '2.0',\n\t\t\t\tisActive: true\n\t\t\t}]\n\t\t\t);\n\n\t\texpect(\n\t\t\treducer([{\n\t\t\t\tid: 1,\n\t\t\t\tversionValue: '',\n\t\t\t\tmodeValue: '',\n\t\t\t\tisActive: false\n\t\t\t},\n\t\t\t{\n\t\t\t\tid: 2,\n\t\t\t\tversionValue: '',\n\t\t\t\tmodeValue: '',\n\t\t\t\tisActive: false\n\t\t\t}], {\n\t\t\t\t\ttype: types.UPDATE_SITEVERSIONS,\n\t\t\t\t\tsiteVersion: {\n\t\t\t\t\t\tid: 2,\n\t\t\t\t\t\tversionValue: '1.0',\n\t\t\t\t\t\tmodeValue: '2.0',\n\t\t\t\t\t\tisActive: true\n\t\t\t\t\t}\n\t\t\t\t})\n\t\t).toEqual(\n\t\t\t[{\n\t\t\t\tid: 1,\n\t\t\t\tversionValue: '',\n\t\t\t\tmodeValue: '',\n\t\t\t\tisActive: false\n\t\t\t},\n\t\t\t{\n\t\t\t\tid: 2,\n\t\t\t\tversionValue: '1.0',\n\t\t\t\tmodeValue: '2.0',\n\t\t\t\tisActive: true\n\t\t\t}]\n\t\t\t);\n\t});\n\tit('should handle remove site Versions', () => {\n\t\texpect(\n\t\t\treducer([{\n\t\t\t\tid: 1,\n\t\t\t\tversionValue: '1.0',\n\t\t\t\tmodeValue: '2.0',\n\t\t\t\tisActive: true\n\t\t\t}], {\n\t\t\t\t\ttype: types.DELETE_SITEVERSIONS,\n\t\t\t\t\tsiteVersion: {\n\t\t\t\t\t\tid: 1,\n\t\t\t\t\t\tversionValue: '1.0',\n\t\t\t\t\t\tmodeValue: '2.0',\n\t\t\t\t\t\tisActive: true\n\t\t\t\t\t}\n\t\t\t\t})\n\t\t).toEqual(\n\t\t\t[]\n\t\t\t);\n\n\t\texpect(\n\t\t\treducer([{\n\t\t\t\tid: 1,\n\t\t\t\tversionValue: '',\n\t\t\t\tmodeValue: '',\n\t\t\t\tisActive: false\n\t\t\t},\n\t\t\t{\n\t\t\t\tid: 2,\n\t\t\t\tversionValue: '',\n\t\t\t\tmodeValue: '',\n\t\t\t\tisActive: false\n\t\t\t}], {\n\t\t\t\t\ttype: types.DELETE_SITEVERSIONS,\n\t\t\t\t\tsiteVersion: {\n\t\t\t\t\t\tid: 2,\n\t\t\t\t\t\tversionValue: '',\n\t\t\t\t\t\tmodeValue: '',\n\t\t\t\t\t\tisActive: false\n\t\t\t\t\t}\n\t\t\t\t})\n\t\t).toEqual(\n\t\t\t[{\n\t\t\t\tid: 1,\n\t\t\t\tversionValue: '',\n\t\t\t\tmodeValue: '',\n\t\t\t\tisActive: false\n\t\t\t}]\n\t\t\t);\n\t});\n});",
+    "static": true,
+    "longname": "src/reducers/siteVersionReducer.spec.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 97,
+    "kind": "file",
+    "name": "src/reducers/uploadFileReducer.js",
+    "content": "import * as types from '../constants/actionTypes';\n// import initialState from './initialState';\n\n/**\n * \n * \n * @param {Array} [state=[]] \n * @param {any} action \n * @returns files state\n */\nconst uploadFiles = (state = [], action) => {\n  switch (action.type) {\n    case types.LOAD_FILES_SUCCESS: {\n      return action.files;\n    }\n    case types.UPLOAD_FILES_SUCCESS: {\n      return [\n        ...state,\n        Object.assign({}, action.file),\n      ];\n    }\n    default:\n      return state;\n  }\n};\n\nexport default uploadFiles;",
+    "static": true,
+    "longname": "src/reducers/uploadFileReducer.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 98,
+    "kind": "function",
+    "name": "uploadFiles",
+    "memberof": "src/reducers/uploadFileReducer.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/reducers/uploadFileReducer.js~uploadFiles",
+    "access": null,
+    "export": true,
+    "importPath": "wpp/src/reducers/uploadFileReducer.js",
+    "importStyle": "uploadFiles",
+    "description": "",
+    "lineNumber": 11,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "files state"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Array"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": "[]",
+        "defaultRaw": [],
+        "name": "state",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "any"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "action",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "*"
+      ],
+      "spread": false,
+      "description": "files state"
+    }
+  },
+  {
+    "__docId__": 99,
+    "kind": "file",
+    "name": "src/reducers/versionReducer.js",
+    "content": "import * as types from '../constants/actionTypes';\n// import initialState from './initialState';\n\nexport /**\n * \n * \n * @param {Array} [state=[]] \n * @param {any} action \n * @returns versions state\n */\nconst versions = (state = [], action) => {\n  switch (action.type) {\n    case types.LOAD_VERSIONS:\n      return action.versions;\n    default:\n      return state;\n  }\n};",
+    "static": true,
+    "longname": "src/reducers/versionReducer.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 100,
+    "kind": "function",
+    "name": "versions",
+    "memberof": "src/reducers/versionReducer.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/reducers/versionReducer.js~versions",
+    "access": null,
+    "export": true,
+    "importPath": "wpp/src/reducers/versionReducer.js",
+    "importStyle": "{versions}",
+    "description": "",
+    "lineNumber": 11,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "versions state"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Array"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": "[]",
+        "defaultRaw": [],
+        "name": "state",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "any"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "action",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "*"
+      ],
+      "spread": false,
+      "description": "versions state"
+    }
+  },
+  {
+    "__docId__": 101,
+    "kind": "file",
+    "name": "src/reducers/versionReducer.spec.js",
+    "content": "import { versions } from './versionReducer';\nimport * as types from '../constants/actionTypes';\n\ndescribe('mode reducer', () => {\n\tit('should return the initial state', () => {\n\t\texpect(\n\t\t\tversions(undefined, {})\n\t\t).toEqual([]);\n\t});\n\tit('should handle load versions', () => {\n\t\texpect(\n\t\t\tversions([], {\n\t\t\t\ttype: types.LOAD_VERSIONS,\n\t\t\t\tversions: [\n\t\t\t\t\t{\n\t\t\t\t\t\tvalue: 'cory-house',\n\t\t\t\t\t\ttext: 'Cory',\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\tvalue: 'scott-allen',\n\t\t\t\t\t\ttext: 'Scott',\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\tvalue: 'dan-wahlin',\n\t\t\t\t\t\ttext: 'Dan',\n\t\t\t\t\t}\n\t\t\t\t]\n\t\t\t})\n\t\t).toEqual(\n\t\t\t[\n\t\t\t\t{\n\t\t\t\t\tvalue: 'cory-house',\n\t\t\t\t\ttext: 'Cory',\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\tvalue: 'scott-allen',\n\t\t\t\t\ttext: 'Scott',\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\tvalue: 'dan-wahlin',\n\t\t\t\t\ttext: 'Dan',\n\t\t\t\t}\n\t\t\t]\n\t\t\t);\n\t});\n\n});",
+    "static": true,
+    "longname": "src/reducers/versionReducer.spec.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 102,
+    "kind": "file",
+    "name": "src/routes.js",
+    "content": "import React from 'react';\nimport { Route, IndexRoute } from 'react-router';\n\nimport App from './components/App';\nimport HomePage from './components/HomePage';\nimport NotFoundPage from './components/NotFoundPage';\n\nexport default (\n  <Route path=\"/\" component={App}>\n    <IndexRoute component={HomePage}/>\n    <Route path=\"*\" component={NotFoundPage}/>\n  </Route>\n);",
+    "static": true,
+    "longname": "src/routes.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 103,
+    "kind": "file",
+    "name": "src/store/configureStore.js",
+    "content": "import {createStore, compose, applyMiddleware} from 'redux';\nimport reduxImmutableStateInvariant from 'redux-immutable-state-invariant';\nimport thunk from 'redux-thunk';\nimport rootReducer from '../reducers';\n\nfunction configureStoreProd(initialState) {\n  const middlewares = [\n    // Add other middleware on this line...\n\n    // thunk middleware can also accept an extra argument to be passed to each thunk action\n    // https://github.com/gaearon/redux-thunk#injecting-a-custom-argument\n    thunk,\n  ];\n\n  return createStore(rootReducer, initialState, compose(\n    applyMiddleware(...middlewares)\n    )\n  );\n}\n\nfunction configureStoreDev(initialState) {\n  const middlewares = [\n    // Add other middleware on this line...\n\n    // Redux middleware that spits an error on you when you try to mutate your state either inside a dispatch or between dispatches.\n    reduxImmutableStateInvariant(),\n\n    // thunk middleware can also accept an extra argument to be passed to each thunk action\n    // https://github.com/gaearon/redux-thunk#injecting-a-custom-argument\n    thunk,\n  ];\n\n  const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose; // add support for Redux dev tools\n  const store = createStore(rootReducer, initialState, composeEnhancers(\n    applyMiddleware(...middlewares)\n    )\n  );\n\n  if (module.hot) {\n    // Enable Webpack hot module replacement for reducers\n    module.hot.accept('../reducers', () => {\n      const nextReducer = require('../reducers').default; // eslint-disable-line global-require\n      store.replaceReducer(nextReducer);\n    });\n  }\n\n  return store;\n}\n\nconst configureStore = process.env.NODE_ENV === 'production' ? configureStoreProd : configureStoreDev;\n\nexport default configureStore;",
+    "static": true,
+    "longname": "src/store/configureStore.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 104,
+    "kind": "function",
+    "name": "configureStoreProd",
+    "memberof": "src/store/configureStore.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/store/configureStore.js~configureStoreProd",
+    "access": null,
+    "export": false,
+    "importPath": "wpp/src/store/configureStore.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 6,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "initialState",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 105,
+    "kind": "function",
+    "name": "configureStoreDev",
+    "memberof": "src/store/configureStore.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/store/configureStore.js~configureStoreDev",
+    "access": null,
+    "export": false,
+    "importPath": "wpp/src/store/configureStore.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 21,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "initialState",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 106,
+    "kind": "variable",
+    "name": "configureStore",
+    "memberof": "src/store/configureStore.js",
+    "static": true,
+    "longname": "src/store/configureStore.js~configureStore",
+    "access": null,
+    "export": true,
+    "importPath": "wpp/src/store/configureStore.js",
+    "importStyle": "configureStore",
+    "description": null,
+    "lineNumber": 50,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 107,
+    "kind": "file",
+    "name": "src/webpack-public-path.js",
+    "content": "// Dynamically set the webpack public path at runtime below\n// This magic global is used by webpack to set the public path at runtime.\n// The public path is set dynamically to avoid the following issues:\n// 1. https://github.com/coryhouse/react-slingshot/issues/205\n// 2. https://github.com/coryhouse/react-slingshot/issues/181\n// 3. https://github.com/coryhouse/react-slingshot/pull/125\n// Documentation: http://webpack.github.io/docs/configuration.html#output-publicpath\n// eslint-disable-next-line no-undef\n__webpack_public_path__ = window.location.protocol + \"//\" + window.location.host + \"/\";\n",
+    "static": true,
+    "longname": "src/webpack-public-path.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 109,
+    "kind": "external",
+    "name": "Infinity",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Infinity",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 110,
+    "kind": "external",
+    "name": "NaN",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~NaN",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 111,
+    "kind": "external",
+    "name": "undefined",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~undefined",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 112,
+    "kind": "external",
+    "name": "null",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~null",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 113,
+    "kind": "external",
+    "name": "Object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Object",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 114,
+    "kind": "external",
+    "name": "object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~object",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 115,
+    "kind": "external",
+    "name": "Function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Function",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 116,
+    "kind": "external",
+    "name": "function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~function",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 117,
+    "kind": "external",
+    "name": "Boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Boolean",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 118,
+    "kind": "external",
+    "name": "boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~boolean",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 119,
+    "kind": "external",
+    "name": "Symbol",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Symbol",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 120,
+    "kind": "external",
+    "name": "Error",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Error",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 121,
+    "kind": "external",
+    "name": "EvalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~EvalError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 122,
+    "kind": "external",
+    "name": "InternalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~InternalError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 123,
+    "kind": "external",
+    "name": "RangeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~RangeError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 124,
+    "kind": "external",
+    "name": "ReferenceError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~ReferenceError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 125,
+    "kind": "external",
+    "name": "SyntaxError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~SyntaxError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 126,
+    "kind": "external",
+    "name": "TypeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~TypeError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 127,
+    "kind": "external",
+    "name": "URIError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~URIError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 128,
+    "kind": "external",
+    "name": "Number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Number",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 129,
+    "kind": "external",
+    "name": "number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~number",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 130,
+    "kind": "external",
+    "name": "Date",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Date",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 131,
+    "kind": "external",
+    "name": "String",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~String",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 132,
+    "kind": "external",
+    "name": "string",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~string",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 133,
+    "kind": "external",
+    "name": "RegExp",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~RegExp",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 134,
+    "kind": "external",
+    "name": "Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 135,
+    "kind": "external",
+    "name": "Int8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Int8Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 136,
+    "kind": "external",
+    "name": "Uint8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint8Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 137,
+    "kind": "external",
+    "name": "Uint8ClampedArray",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint8ClampedArray",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 138,
+    "kind": "external",
+    "name": "Int16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Int16Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 139,
+    "kind": "external",
+    "name": "Uint16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint16Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 140,
+    "kind": "external",
+    "name": "Int32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Int32Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 141,
+    "kind": "external",
+    "name": "Uint32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint32Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 142,
+    "kind": "external",
+    "name": "Float32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Float32Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 143,
+    "kind": "external",
+    "name": "Float64Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Float64Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 144,
+    "kind": "external",
+    "name": "Map",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Map",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 145,
+    "kind": "external",
+    "name": "Set",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Set",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 146,
+    "kind": "external",
+    "name": "WeakMap",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~WeakMap",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 147,
+    "kind": "external",
+    "name": "WeakSet",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~WeakSet",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 148,
+    "kind": "external",
+    "name": "ArrayBuffer",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~ArrayBuffer",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 149,
+    "kind": "external",
+    "name": "DataView",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~DataView",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 150,
+    "kind": "external",
+    "name": "JSON",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~JSON",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 151,
+    "kind": "external",
+    "name": "Promise",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Promise",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 152,
+    "kind": "external",
+    "name": "Generator",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Generator",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 153,
+    "kind": "external",
+    "name": "GeneratorFunction",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~GeneratorFunction",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 154,
+    "kind": "external",
+    "name": "Reflect",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Reflect",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 155,
+    "kind": "external",
+    "name": "Proxy",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Proxy",
+    "access": null,
+    "description": "",
+    "lineNumber": 193,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 157,
+    "kind": "external",
+    "name": "CanvasRenderingContext2D",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/WebAPIExternal.js~CanvasRenderingContext2D",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 158,
+    "kind": "external",
+    "name": "DocumentFragment",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/WebAPIExternal.js~DocumentFragment",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 159,
+    "kind": "external",
+    "name": "Element",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/Element",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/WebAPIExternal.js~Element",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 160,
+    "kind": "external",
+    "name": "Event",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/Event",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/WebAPIExternal.js~Event",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 161,
+    "kind": "external",
+    "name": "Node",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/Node",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/WebAPIExternal.js~Node",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 162,
+    "kind": "external",
+    "name": "NodeList",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/NodeList",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/WebAPIExternal.js~NodeList",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 163,
+    "kind": "external",
+    "name": "XMLHttpRequest",
+    "externalLink": "https://developer.mozilla.org/en/docs/Web/API/XMLHttpRequest",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/WebAPIExternal.js~XMLHttpRequest",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 164,
+    "kind": "external",
+    "name": "AudioContext",
+    "externalLink": "https://developer.mozilla.org/en/docs/Web/API/AudioContext",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/WebAPIExternal.js~AudioContext",
+    "access": null,
+    "description": "",
+    "lineNumber": 34,
+    "builtinExternal": true
+  }
+]
